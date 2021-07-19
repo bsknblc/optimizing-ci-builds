@@ -1,11 +1,9 @@
 import base64, copy, csv, os, requests
-
-github_auth_token = os.environ[G_AUTH_TOKEN]
+github_auth_token = os.environ["G_AUTH_TOKEN"]
 headers = {
     'Authorization': 'token ' + github_auth_token
 }
 repositories = []
-
 # 14*30=420
 # There are 30 repos in every page, so with 14 iterations we get 420 java repositories.
 for i in range(1, 15):
@@ -13,7 +11,6 @@ for i in range(1, 15):
     response = requests.get(url=url, headers=headers).json()
     for repository in response["items"]:
         repositories.append({"name": repository["full_name"], "link": repository["html_url"]})
-
 filtered_repositories = []
 for repository in repositories:
     files = requests.get(url="https://api.github.com/repos/" + repository["name"] + "/contents", headers=headers).json()
@@ -32,11 +29,20 @@ for repository in repositories:
                 repository["coverage-tool"] = "cobertura"
                 filtered_repositories.append(copy.deepcopy(repository))
             break
-
+        elif file["name"] == "build.gradle":
+            repository["build-tool"] = "gradle"
+            response = requests.get(url="https://api.github.com/repos/"+ repository["name"] +"/contents/build.gradle", headers=headers).json()
+            gradle_content = base64.b64decode(response["content"]).decode("utf-8")
+            if "jacoco" in gradle_content:
+                repository["coverage-tool"] = "jacoco"
+                filtered_repositories.append(copy.deepcopy(repository))
+            if "cobertura" in gradle_content:
+                repository["coverage-tool"] = "cobertura"
+                filtered_repositories.append(copy.deepcopy(repository))
+            break
 # Remove duplicates
 final_repositories = []
 [final_repositories.append(repository) for repository in filtered_repositories if repository not in final_repositories]
-
 # Save repositories to a csv file
 with open("data.csv", "w", newline="") as csv_file:
     csv_writer = csv.writer(csv_file)
