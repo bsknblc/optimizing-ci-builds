@@ -1,200 +1,217 @@
-link,Maven,Gradle,Jacoco,Cobertura,Javadoc,Codecov,Travis CI,Github Actions,Yml Jacoco,Yml Cobertura,Yml Javadoc
-https://github.com/spring-projects/spring-framework,No,Yes,No,No,Yes,No,No,Yes,No,No,No
-https://github.com/apache/dubbo,Yes,No,Yes,No,Yes,Yes,Yes,Yes,Yes,No,Yes
-https://github.com/iluwatar/java-design-patterns,Yes,No,Yes,No,No,No,No,Yes,No,No,No
-https://github.com/elastic/elasticsearch,No,Yes,No,No,Yes,No,No,Yes,No,No,No
-https://github.com/spring-projects/spring-petclinic,Yes,No,Yes,No,No,No,Yes,No,No,No,No
-https://github.com/mybatis/mybatis-3,Yes,No,Yes,No,No,No,No,Yes,Yes,No,No
-https://github.com/apache/kafka,No,Yes,Yes,No,Yes,No,No,No,No,No,No
-https://github.com/apache/flink,Yes,No,No,No,Yes,No,No,No,No,No,No
-https://github.com/ctripcorp/apollo,Yes,No,Yes,Yes,Yes,No,No,Yes,Yes,No,No
-https://github.com/zxing/zxing,Yes,No,Yes,No,Yes,Yes,Yes,Yes,No,No,No
-https://github.com/jleetutorial/maven-project,Yes,No,No,No,Yes,No,No,No,No,No,No
-https://github.com/chanjarster/weixin-java-tools,Yes,No,No,No,Yes,No,Yes,No,No,No,No
-https://github.com/apache/rocketmq,Yes,No,Yes,No,Yes,Yes,Yes,Yes,No,No,No
-https://github.com/xuxueli/xxl-job,Yes,No,No,No,Yes,No,No,Yes,No,No,No
-https://github.com/checkstyle/checkstyle,Yes,No,Yes,No,Yes,No,Yes,Yes,No,No,Yes
-https://github.com/xkcoding/spring-boot-demo,Yes,No,No,No,No,No,Yes,Yes,No,No,Yes
-https://github.com/alibaba/druid,Yes,No,Yes,No,Yes,No,Yes,No,No,No,No
-https://github.com/alibaba/nacos,Yes,No,Yes,No,Yes,No,Yes,Yes,No,No,No
-https://github.com/ReactiveX/RxJava,No,Yes,Yes,No,Yes,No,No,Yes,No,No,Yes
-https://github.com/apache/hadoop,Yes,No,No,No,Yes,No,No,No,No,No,No
-https://github.com/jenkinsci/jenkins,Yes,No,No,No,Yes,No,No,Yes,No,No,No
-https://github.com/yankils/hello-world,Yes,No,No,No,Yes,No,No,No,No,No,No
-https://github.com/seata/seata,Yes,No,Yes,No,Yes,Yes,Yes,Yes,No,No,No
-https://github.com/Activiti/Activiti,Yes,No,Yes,No,Yes,No,No,Yes,No,No,No
-https://github.com/SeleniumHQ/selenium,No,No,No,No,No,Yes,Yes,Yes,No,Yes,Yes
-https://github.com/alibaba/fastjson,Yes,No,Yes,No,Yes,No,Yes,Yes,No,No,No
-https://github.com/nostra13/Android-Universal-Image-Loader,No,Yes,No,No,Yes,No,Yes,Yes,No,No,No
-https://github.com/alibaba/Sentinel,Yes,No,Yes,No,Yes,Yes,No,Yes,No,No,Yes
-https://github.com/dromara/hutool,Yes,No,No,Yes,Yes,Yes,Yes,No,No,No,No
-https://github.com/alibaba/arthas,Yes,No,Yes,No,Yes,Yes,Yes,Yes,No,No,No
-https://github.com/bumptech/glide,No,Yes,No,No,Yes,No,No,Yes,No,No,No
-https://github.com/alibaba/easyexcel,Yes,No,No,No,Yes,No,Yes,No,No,No,No
-https://github.com/google/ExoPlayer,No,Yes,No,No,Yes,No,No,No,No,No,No
-https://github.com/apache/skywalking,Yes,No,No,Yes,No,Yes,No,Yes,No,Yes,Yes
-https://github.com/sqshq/piggymetrics,Yes,No,No,No,No,Yes,Yes,No,No,No,No
-https://github.com/signalapp/Signal-Android,No,Yes,No,No,Yes,No,No,Yes,No,No,No
-https://github.com/apache/shardingsphere,Yes,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes
-https://github.com/eclipse/deeplearning4j,Yes,No,No,No,Yes,No,No,Yes,No,No,Yes
-https://github.com/mission-peace/interview,No,Yes,Yes,No,No,No,No,No,No,No,No
-https://github.com/MicrosoftDocs/pipelines-java,Yes,No,Yes,No,No,No,No,No,No,No,No
-https://github.com/scwang90/SmartRefreshLayout,No,Yes,No,No,Yes,No,No,No,No,No,No
-https://github.com/greenrobot/EventBus,No,Yes,No,No,Yes,No,Yes,No,No,No,No
-https://github.com/NationalSecurityAgency/ghidra,No,Yes,Yes,No,No,No,No,No,No,No,No
-https://github.com/apache/hive,Yes,No,No,No,Yes,No,No,Yes,No,No,No
-https://github.com/apereo/cas,No,Yes,Yes,No,Yes,No,Yes,Yes,Yes,No,Yes
-https://github.com/redis/jedis,Yes,No,Yes,No,Yes,No,No,Yes,No,No,No
-https://github.com/pinpoint-apm/pinpoint,Yes,No,Yes,No,Yes,No,No,Yes,Yes,No,No
-https://github.com/LMAX-Exchange/disruptor,No,Yes,No,No,Yes,No,No,Yes,No,No,No
-https://github.com/dropwizard/dropwizard,Yes,No,No,No,Yes,No,No,Yes,No,No,No
-https://github.com/OpenAPITools/openapi-generator,Yes,No,Yes,No,Yes,No,Yes,Yes,Yes,No,Yes
-https://github.com/baomidou/mybatis-plus,No,Yes,No,No,Yes,No,No,No,No,No,No
-https://github.com/junit-team/junit4,Yes,No,No,No,Yes,No,No,Yes,No,No,Yes
-https://github.com/Netflix/eureka,No,Yes,No,No,Yes,No,Yes,No,No,No,No
-https://github.com/Tencent/tinker,No,Yes,No,No,Yes,No,No,No,No,No,No
-https://github.com/zhoutaoo/SpringCloud,Yes,No,No,No,No,Yes,Yes,Yes,No,No,No
-https://github.com/apache/shardingsphere-elasticjob,Yes,No,Yes,Yes,Yes,Yes,Yes,Yes,No,Yes,Yes
-https://github.com/grpc/grpc-java,No,Yes,Yes,No,Yes,No,No,Yes,No,No,No
-https://github.com/openhab/openhab-addons,Yes,No,No,No,Yes,No,No,No,No,No,No
-https://github.com/apache/druid,Yes,No,Yes,No,Yes,Yes,Yes,No,No,No,No
-https://github.com/pagehelper/Mybatis-PageHelper,Yes,No,No,No,Yes,No,Yes,No,No,No,No
-https://github.com/openmrs/openmrs-core,Yes,No,Yes,No,Yes,No,Yes,Yes,Yes,No,Yes
-https://github.com/hs-web/hsweb-framework,Yes,No,Yes,No,Yes,Yes,Yes,No,No,No,No
-https://github.com/ValaxyTech/hello-world,Yes,No,No,No,Yes,No,No,No,No,No,No
-https://github.com/CJRivas/jenkinspipeline,Yes,No,No,No,Yes,No,No,No,No,No,No
-https://github.com/Kong/unirest-java,Yes,No,Yes,No,Yes,No,No,Yes,No,No,No
-https://github.com/microservices-demo/shipping,Yes,No,Yes,No,No,No,Yes,Yes,Yes,No,No
-https://github.com/davideas/FlexibleAdapter,No,Yes,No,No,Yes,No,No,No,No,No,No
-https://github.com/iBotPeaches/Apktool,No,Yes,No,No,Yes,No,No,Yes,No,No,No
-https://github.com/apache/hbase,Yes,No,Yes,No,Yes,No,No,No,No,No,No
-https://github.com/medcl/elasticsearch-analysis-ik,Yes,No,No,No,Yes,No,Yes,No,No,No,No
-https://github.com/openzipkin/zipkin,Yes,No,No,No,Yes,No,No,Yes,No,No,Yes
-https://github.com/codecentric/spring-boot-admin,Yes,No,Yes,No,Yes,No,No,Yes,Yes,No,Yes
-https://github.com/Trinea/android-common,Yes,No,No,No,Yes,No,No,No,No,No,No
-https://github.com/aws/aws-sdk-java,Yes,No,No,No,Yes,No,Yes,Yes,No,No,No
-https://github.com/SERG-Delft/mooc-software-testing,Yes,No,Yes,No,No,No,No,Yes,No,No,No
-https://github.com/se-edu/addressbook-level4,No,Yes,Yes,No,No,No,Yes,No,No,No,No
-https://github.com/flowable/flowable-engine,Yes,No,Yes,No,Yes,No,No,Yes,No,No,Yes
-https://github.com/apache/incubator-shenyu,Yes,No,Yes,No,Yes,No,No,Yes,No,No,Yes
-https://github.com/apache/ignite,Yes,No,No,No,Yes,No,Yes,No,No,No,No
-https://github.com/zaproxy/zaproxy,No,No,No,No,No,No,No,Yes,Yes,No,No
-https://github.com/gyf-dev/ImmersionBar,No,Yes,No,No,Yes,No,No,No,No,No,No
-https://github.com/baomidou/mybatis-plus-samples,Yes,No,No,Yes,No,Yes,Yes,No,No,No,No
-https://github.com/Anuken/Mindustry,No,Yes,No,No,Yes,No,No,Yes,No,No,Yes
-https://github.com/stleary/JSON-java,No,Yes,Yes,No,Yes,No,No,Yes,No,No,Yes
-https://github.com/alibaba/otter,Yes,No,No,No,Yes,No,No,No,No,No,No
-https://github.com/brettwooldridge/HikariCP,Yes,No,Yes,No,Yes,Yes,Yes,Yes,No,No,No
-https://github.com/knightliao/disconf,Yes,No,No,Yes,Yes,No,Yes,No,No,No,No
-https://github.com/spring-cloud/spring-cloud-gateway,Yes,No,Yes,No,No,No,No,No,No,No,No
-https://github.com/apache/pulsar,Yes,No,Yes,No,Yes,No,No,Yes,No,No,No
-https://github.com/NLPchina/ansj_seg,Yes,No,No,No,Yes,No,Yes,No,No,No,No
-https://github.com/spring-cloud/spring-cloud-netflix,Yes,No,Yes,No,No,No,No,No,No,No,No
-https://github.com/TooTallNate/Java-WebSocket,No,Yes,No,No,Yes,No,No,Yes,Yes,No,No
-https://github.com/mybatis/spring,Yes,No,No,No,No,No,No,Yes,Yes,No,No
-https://github.com/apache/dolphinscheduler,Yes,No,Yes,Yes,Yes,Yes,No,Yes,Yes,No,No
-https://github.com/apache/maven,Yes,No,No,No,Yes,No,No,Yes,No,No,No
-https://github.com/tuguangquan/mybatis,Yes,No,No,Yes,No,No,Yes,No,No,No,No
-https://github.com/jhy/jsoup,Yes,No,No,No,Yes,No,No,Yes,No,No,No
-https://github.com/cucumber/cucumber-jvm,Yes,No,No,No,Yes,No,No,Yes,Yes,No,Yes
-https://github.com/yasserg/crawler4j,No,Yes,No,No,Yes,No,Yes,No,No,No,No
-https://github.com/brianfrankcooper/YCSB,Yes,No,No,No,Yes,No,Yes,No,No,No,No
-https://github.com/spring-projects/spring-batch,Yes,No,Yes,No,Yes,No,No,Yes,No,No,No
-https://github.com/eclipse-vertx/vert.x,Yes,No,No,No,Yes,No,No,Yes,No,No,No
-https://github.com/neo4j/neo4j,Yes,No,No,No,Yes,No,No,No,No,No,No
-https://github.com/alibaba/jstorm,Yes,No,No,No,Yes,No,No,No,No,No,No
-https://github.com/OpenRefine/OpenRefine,Yes,No,Yes,No,No,No,No,Yes,Yes,No,No
-https://github.com/SonarSource/sonarqube,No,Yes,Yes,No,Yes,No,Yes,No,No,No,No
-https://github.com/hazelcast/hazelcast,Yes,No,Yes,Yes,Yes,No,No,Yes,No,No,Yes
-https://github.com/OpenFeign/feign,Yes,No,No,No,Yes,No,No,No,No,No,No
-https://github.com/googlemaps/android-maps-utils,No,Yes,Yes,No,Yes,No,No,Yes,Yes,No,No
-https://github.com/joelittlejohn/jsonschema2pojo,Yes,No,No,No,Yes,No,No,Yes,No,No,No
-https://github.com/JabRef/jabref,No,Yes,Yes,No,Yes,Yes,No,Yes,Yes,No,No
-https://github.com/NLPchina/elasticsearch-sql,Yes,No,No,No,Yes,No,Yes,No,No,No,No
-https://github.com/google/guice,Yes,No,No,No,Yes,No,No,Yes,No,No,Yes
-https://github.com/quarkusio/quarkus,Yes,No,No,No,Yes,No,No,Yes,No,No,No
-https://github.com/azkaban/azkaban,No,Yes,Yes,No,No,Yes,Yes,No,No,No,No
-https://github.com/gephi/gephi,Yes,No,No,No,Yes,No,Yes,No,No,No,No
-https://github.com/apache/flume,Yes,No,No,No,Yes,No,Yes,No,No,No,No
-https://github.com/springfox/springfox,No,Yes,Yes,No,Yes,No,No,No,No,No,No
-https://github.com/kubesphere/devops-java-sample,Yes,No,Yes,No,No,No,No,No,No,No,No
-https://github.com/codingapi/tx-lcn,Yes,No,Yes,No,Yes,Yes,Yes,No,No,No,No
-https://github.com/mongodb/mongo-java-driver,No,Yes,Yes,No,Yes,No,No,No,No,No,No
-https://github.com/wildfirechat/server,Yes,No,No,No,Yes,No,Yes,No,No,No,No
-https://github.com/apache/kylin,Yes,No,Yes,No,Yes,Yes,Yes,Yes,No,No,No
-https://github.com/liquibase/liquibase,Yes,No,Yes,No,Yes,No,No,Yes,No,No,No
-https://github.com/debezium/debezium,Yes,No,No,No,Yes,No,No,Yes,No,No,No
-https://github.com/apache/groovy,No,Yes,Yes,Yes,Yes,No,Yes,Yes,No,No,Yes
-https://github.com/xuhuisheng/lemon,Yes,No,Yes,No,Yes,No,Yes,No,No,No,No
-https://github.com/knowm/XChange,Yes,No,No,No,Yes,No,Yes,No,No,No,No
-https://github.com/drtshock/Potato,Yes,No,No,No,Yes,No,No,No,No,No,No
-https://github.com/rest-assured/rest-assured,Yes,No,No,No,Yes,No,Yes,Yes,No,No,No
-https://github.com/apache/jmeter,No,No,No,No,No,Yes,Yes,Yes,No,No,No
-https://github.com/mybatis/spring-boot-starter,Yes,No,No,No,No,No,No,Yes,Yes,No,No
-https://github.com/AsyncHttpClient/async-http-client,Yes,No,No,No,Yes,No,Yes,Yes,No,No,No
-https://github.com/perwendel/spark,Yes,No,No,No,Yes,No,Yes,No,No,No,No
-https://github.com/Justson/AgentWeb,No,Yes,No,No,Yes,No,No,No,No,No,No
-https://github.com/Red5/red5-server,Yes,No,No,No,Yes,No,Yes,No,No,No,No
-https://github.com/dromara/hmily,Yes,No,No,Yes,Yes,No,No,Yes,No,Yes,Yes
-https://github.com/zuihou/lamp-cloud,Yes,No,No,No,Yes,No,No,No,No,No,No
-https://github.com/ankidroid/Anki-Android,No,Yes,No,No,No,Yes,No,Yes,Yes,No,No
-https://github.com/apache/ambari,Yes,No,No,No,Yes,No,No,No,No,No,No
-https://github.com/spring-petclinic/spring-framework-petclinic,Yes,No,Yes,No,No,No,Yes,No,No,No,No
-https://github.com/apache/commons-lang,Yes,No,No,No,Yes,No,Yes,Yes,No,No,No
-https://github.com/intuit/karate,Yes,No,No,No,Yes,No,No,Yes,No,No,No
-https://github.com/essentials/Essentials,Yes,No,No,No,Yes,No,Yes,No,No,No,No
-https://github.com/Meituan-Dianping/Leaf,Yes,No,Yes,No,No,No,No,No,No,No,No
-https://github.com/nextcloud/android,No,Yes,Yes,No,No,No,No,Yes,No,No,No
-https://github.com/Nepxion/Discovery,Yes,No,No,No,Yes,No,Yes,Yes,No,No,No
-https://github.com/getodk/collect,No,Yes,Yes,No,No,No,No,No,No,No,No
-https://github.com/ben-manes/caffeine,No,Yes,Yes,No,Yes,No,No,Yes,No,No,No
-https://github.com/junit-team/junit5,No,No,No,No,No,No,No,Yes,Yes,No,No
-https://github.com/ethereum/ethereumj,No,Yes,No,No,Yes,No,Yes,No,No,No,No
-https://github.com/thinkaurelius/titan,Yes,No,Yes,Yes,Yes,No,No,No,No,No,No
-https://github.com/liyiorg/weixin-popular,Yes,No,No,No,Yes,No,No,No,No,No,No
-https://github.com/guoguibing/librec,Yes,No,No,No,Yes,No,No,No,No,No,No
-https://github.com/aliyun/aliyun-openapi-java-sdk,No,No,No,No,No,Yes,Yes,No,No,No,No
-https://github.com/fyhertz/libstreaming,Yes,No,No,No,Yes,No,No,No,No,No,No
-https://github.com/spring-projects/spring-kafka,No,Yes,Yes,No,Yes,No,No,Yes,No,No,No
-https://github.com/jOOQ/jOOQ,Yes,No,No,No,Yes,No,Yes,No,No,No,No
-https://github.com/Azure/azure-sdk-for-java,Yes,No,No,No,Yes,No,No,No,No,No,No
-https://github.com/Netflix/SimianArmy,No,Yes,No,Yes,No,No,Yes,No,No,No,No
-https://github.com/ltsopensource/light-task-scheduler,Yes,No,No,No,Yes,No,No,No,No,No,No
-https://github.com/lets-blade/blade,No,Yes,No,No,No,Yes,Yes,No,No,No,No
-https://github.com/FasterXML/jackson-databind,Yes,No,Yes,No,Yes,No,Yes,Yes,Yes,No,No
-https://github.com/tomakehurst/wiremock,No,Yes,No,No,Yes,No,No,Yes,No,No,No
-https://github.com/spring-cloud/spring-cloud-config,Yes,No,Yes,No,No,No,No,No,No,No,No
-https://github.com/jcoleman/tomcat-redis-session-manager,No,Yes,No,No,Yes,No,No,No,No,No,No
-https://github.com/Netflix/conductor,No,Yes,Yes,No,Yes,No,No,Yes,No,No,No
-https://github.com/plutext/docx4j,Yes,No,No,No,Yes,No,No,No,No,No,No
-https://github.com/pmd/pmd,Yes,No,Yes,No,Yes,No,No,Yes,No,No,No
-https://github.com/alibaba/transmittable-thread-local,Yes,No,Yes,No,Yes,No,Yes,No,No,No,No
-https://github.com/graphhopper/graphhopper,Yes,No,No,No,Yes,No,Yes,Yes,No,No,No
-https://github.com/apache/nutch,No,No,No,No,No,No,No,Yes,No,No,Yes
-https://github.com/flyway/flyway,Yes,No,No,No,Yes,No,Yes,No,No,No,No
-https://github.com/microservices-demo/carts,Yes,No,Yes,No,No,No,Yes,Yes,No,No,No
-https://github.com/square/javapoet,Yes,No,No,No,No,No,No,Yes,No,No,Yes
-https://github.com/DSpace/DSpace,Yes,No,Yes,No,Yes,No,No,Yes,No,No,No
-https://github.com/federicoiosue/Omni-Notes,No,Yes,Yes,No,No,No,No,Yes,Yes,No,No
-https://github.com/orientechnologies/orientdb,Yes,No,Yes,No,Yes,Yes,Yes,No,No,No,No
-https://github.com/xtuhcy/gecco,Yes,No,No,No,Yes,No,Yes,No,No,No,No
-https://github.com/cglib/cglib,Yes,No,No,No,Yes,No,Yes,No,No,No,No
-https://github.com/mock-server/mockserver,Yes,No,No,No,Yes,No,No,Yes,No,No,No
-https://github.com/g0t4/jgsu-spring-petclinic,Yes,No,Yes,No,No,No,Yes,No,No,No,No
-https://github.com/wcaquinocursos/tasks-backend,Yes,No,Yes,No,No,No,No,No,No,No,No
-https://github.com/fossasia/phimpme-android,No,Yes,Yes,No,No,Yes,Yes,No,No,No,No
-https://github.com/prometheus/jmx_exporter,Yes,No,No,No,Yes,No,No,No,No,No,No
-https://github.com/apache/phoenix,Yes,No,Yes,No,Yes,No,No,No,No,No,No
-https://github.com/Graylog2/graylog2-server,Yes,No,No,No,Yes,No,No,Yes,No,No,Yes
-https://github.com/MilosKozak/AndroidAPS,No,Yes,No,No,No,Yes,Yes,No,No,No,No
-https://github.com/spring-projects/spring-integration,No,Yes,Yes,No,Yes,No,No,Yes,No,No,No
-https://github.com/docker-java/docker-java,Yes,No,No,No,Yes,No,No,Yes,No,No,No
-https://github.com/Konloch/bytecode-viewer,Yes,No,No,No,Yes,No,No,Yes,No,No,No
-https://github.com/liuyangming/ByteTCC,Yes,No,No,No,Yes,No,No,No,No,No,No
-https://github.com/eirslett/frontend-maven-plugin,Yes,No,No,No,Yes,No,No,Yes,No,No,No
-https://github.com/kubernetes-client/java,Yes,No,No,No,Yes,No,No,Yes,No,No,No
-https://github.com/egzosn/pay-java-parent,Yes,No,No,No,Yes,No,No,No,No,No,No
-https://github.com/qos-ch/slf4j,Yes,No,No,No,Yes,No,Yes,No,No,No,No
-https://github.com/apache/httpcomponents-client,Yes,No,No,No,Yes,No,Yes,Yes,No,No,No
-https://github.com/burhanrashid52/PhotoEditor,No,Yes,No,No,No,No,No,Yes,No,No,Yes
-https://github.com/alibaba/dubbo-spring-boot-starter,Yes,No,No,No,Yes,No,No,No,No,No,No
+link,Maven,Gradle,Jacoco,Cobertura,Javadoc,Codecov GHA,Codecov Travis,Travis CI,Github Actions,Yml Jacoco,Yml Cobertura,Yml Javadoc,Jacoco skip
+https://github.com/spring-projects/spring-framework,No,Yes,No,No,Yes,No,No,No,Yes,No,No,No,No
+https://github.com/apache/dubbo,Yes,No,Yes,No,Yes,No,Yes,Yes,Yes,Yes GHA,No,Yes GHA,No
+https://github.com/iluwatar/java-design-patterns,Yes,No,Yes,No,No,No,No,No,Yes,No,No,No,No
+https://github.com/elastic/elasticsearch,No,Yes,No,No,Yes,No,No,No,Yes,No,No,No,No
+https://github.com/netty/netty,Yes,No,Yes,No,Yes,No,No,No,Yes,No,No,No,No
+https://github.com/spring-projects/spring-petclinic,Yes,No,Yes,No,No,No,No,Yes,No,No,No,No,No
+https://github.com/mybatis/mybatis-3,Yes,No,Yes,No,No,No,No,No,Yes,Yes GHA,No,No,Yes GHA
+https://github.com/apache/kafka,No,Yes,Yes,No,Yes,No,No,No,No,No,No,No,No
+https://github.com/apache/flink,Yes,No,No,No,Yes,No,No,No,No,No,No,No,No
+https://github.com/google/guava,Yes,No,No,No,Yes,No,No,No,Yes,No,No,Yes GHA,No
+https://github.com/ctripcorp/apollo,Yes,No,Yes,Yes,Yes,No,No,No,Yes,Yes GHA,No,No,No
+https://github.com/zxing/zxing,Yes,No,Yes,No,Yes,No,Yes,Yes,Yes,Yes Travis,No,No,No
+https://github.com/square/okhttp,No,Yes,No,No,Yes,No,No,No,Yes,No,No,No,No
+https://github.com/jleetutorial/maven-project,Yes,No,No,No,Yes,No,No,No,No,No,No,No,No
+https://github.com/chanjarster/weixin-java-tools,Yes,No,No,No,Yes,No,No,Yes,No,No,No,No,No
+https://github.com/apache/rocketmq,Yes,No,Yes,No,Yes,No,Yes,Yes,Yes,Yes Travis,No,No,No
+https://github.com/xuxueli/xxl-job,Yes,No,No,No,Yes,No,No,No,Yes,No,No,No,No
+https://github.com/checkstyle/checkstyle,Yes,No,Yes,No,Yes,No,No,Yes,Yes,No,No,Yes GHA,No
+https://github.com/xkcoding/spring-boot-demo,Yes,No,No,No,No,No,No,Yes,Yes,No,No,Yes GHA,No
+https://github.com/alibaba/druid,Yes,No,Yes,No,Yes,No,No,Yes,No,No,No,No,No
+https://github.com/alibaba/nacos,Yes,No,Yes,No,Yes,No,No,Yes,Yes,No,No,No,No
+https://github.com/ReactiveX/RxJava,No,Yes,Yes,No,Yes,No,No,No,Yes,No,No,Yes GHA,No
+https://github.com/apache/hadoop,Yes,No,No,No,Yes,No,No,No,No,No,No,No,No
+https://github.com/crossoverJie/JCSprout,Yes,No,No,No,No,No,No,Yes,No,No,No,Yes Travis,No
+https://github.com/jenkinsci/jenkins,Yes,No,No,No,Yes,No,No,No,Yes,No,No,No,No
+https://github.com/yankils/hello-world,Yes,No,No,No,Yes,No,No,No,No,No,No,No,No
+https://github.com/seata/seata,Yes,No,Yes,No,Yes,No,Yes,Yes,Yes,No,No,No,No
+https://github.com/Activiti/Activiti,Yes,No,Yes,No,Yes,No,No,No,Yes,No,No,No,No
+https://github.com/SeleniumHQ/selenium,No,No,No,No,No,Yes,No,Yes,Yes,No,Yes GHA,Yes GHA,No
+https://github.com/alibaba/fastjson,Yes,No,Yes,No,Yes,No,No,Yes,Yes,No,No,No,No
+https://github.com/nostra13/Android-Universal-Image-Loader,No,Yes,No,No,Yes,No,No,Yes,Yes,No,No,No,No
+https://github.com/mission-peace/interview,No,Yes,Yes,No,No,No,No,No,No,No,No,No,No
+https://github.com/MicrosoftDocs/pipelines-java,Yes,No,Yes,No,No,No,No,No,No,No,No,No,No
+https://github.com/scwang90/SmartRefreshLayout,No,Yes,No,No,Yes,No,No,No,No,No,No,No,No
+https://github.com/greenrobot/EventBus,No,Yes,No,No,Yes,No,No,Yes,No,No,No,No,No
+https://github.com/Netflix/Hystrix,No,Yes,No,Yes,Yes,No,No,Yes,No,No,No,No,No
+https://github.com/apache/camel,Yes,No,No,No,Yes,No,No,No,Yes,No,No,No,No
+https://github.com/android-async-http/android-async-http,No,Yes,No,No,Yes,No,No,Yes,Yes,No,No,No,No
+https://github.com/prestodb/presto,Yes,No,No,No,No,No,No,No,Yes,No,No,Yes GHA,No
+https://github.com/runelite/runelite,Yes,No,No,No,Yes,No,No,No,Yes,No,No,No,No
+https://github.com/paascloud/paascloud-master,Yes,No,No,No,Yes,No,No,No,No,No,No,No,No
+https://github.com/redisson/redisson,Yes,No,No,No,Yes,No,No,No,Yes,No,No,No,No
+https://github.com/square/picasso,No,Yes,No,No,Yes,No,No,Yes,No,No,No,No,No
+https://github.com/code4craft/webmagic,Yes,No,Yes,No,Yes,No,No,Yes,No,No,No,No,No
+https://github.com/spring-projects/spring-security-oauth,Yes,No,No,No,Yes,No,No,Yes,No,No,No,No,No
+https://github.com/keycloak/keycloak,Yes,No,No,No,Yes,No,No,Yes,Yes,No,No,No,No
+https://github.com/facebook/fresco,No,Yes,No,No,Yes,No,No,No,Yes,No,No,No,No
+https://github.com/NationalSecurityAgency/ghidra,No,Yes,Yes,No,No,No,No,No,No,No,No,No,No
+https://github.com/apache/hive,Yes,No,No,No,Yes,No,No,No,Yes,No,No,No,No
+https://github.com/apereo/cas,No,Yes,Yes,No,Yes,No,No,Yes,Yes,Yes GHA,No,Yes GHA,No
+https://github.com/redis/jedis,Yes,No,Yes,No,Yes,No,No,No,Yes,No,No,No,No
+https://github.com/pinpoint-apm/pinpoint,Yes,No,Yes,No,Yes,No,No,No,Yes,Yes GHA,No,No,No
+https://github.com/LMAX-Exchange/disruptor,No,Yes,No,No,Yes,No,No,No,Yes,No,No,No,No
+https://github.com/dropwizard/dropwizard,Yes,No,No,No,Yes,No,No,No,Yes,No,No,No,No
+https://github.com/OpenAPITools/openapi-generator,Yes,No,Yes,No,Yes,No,No,Yes,Yes,Yes GHA,No,Yes GHA,Yes GHA
+https://github.com/Netflix/eureka,No,Yes,No,No,Yes,No,No,Yes,No,No,No,No,No
+https://github.com/Tencent/tinker,No,Yes,No,No,Yes,No,No,No,No,No,No,No,No
+https://github.com/baomidou/mybatis-plus,No,Yes,No,No,Yes,No,No,No,No,No,No,No,No
+https://github.com/junit-team/junit4,Yes,No,No,No,Yes,No,No,No,Yes,No,No,Yes GHA,No
+https://github.com/apache/shardingsphere-elasticjob,Yes,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,No,Yes GHA,Yes GHA,No
+https://github.com/grpc/grpc-java,No,Yes,Yes,No,Yes,No,No,No,Yes,No,No,No,No
+https://github.com/openhab/openhab-addons,Yes,No,No,No,Yes,No,No,No,No,No,No,No,No
+https://github.com/apache/druid,Yes,No,Yes,No,Yes,No,Yes,Yes,No,Yes Travis,No,Yes Travis,No
+https://github.com/pagehelper/Mybatis-PageHelper,Yes,No,No,No,Yes,No,No,Yes,No,No,No,No,No
+https://github.com/openmrs/openmrs-core,Yes,No,Yes,No,Yes,No,No,Yes,Yes,Yes GHA,No,Yes GHA,No
+https://github.com/hs-web/hsweb-framework,Yes,No,Yes,No,Yes,No,Yes,Yes,No,No,No,No,No
+https://github.com/greenrobot/greenDAO,No,Yes,No,No,Yes,No,No,Yes,No,No,No,No,No
+https://github.com/ValaxyTech/hello-world,Yes,No,No,No,Yes,No,No,No,No,No,No,No,No
+https://github.com/iBotPeaches/Apktool,No,Yes,No,No,Yes,No,No,No,Yes,No,No,No,No
+https://github.com/apache/hbase,Yes,No,Yes,No,Yes,No,No,No,No,No,No,No,No
+https://github.com/medcl/elasticsearch-analysis-ik,Yes,No,No,No,Yes,No,No,Yes,No,No,No,No,No
+https://github.com/openzipkin/zipkin,Yes,No,No,No,Yes,No,No,No,Yes,No,No,Yes GHA,No
+https://github.com/codecentric/spring-boot-admin,Yes,No,Yes,No,Yes,No,No,No,Yes,Yes GHA,No,Yes GHA,No
+https://github.com/Trinea/android-common,Yes,No,No,No,Yes,No,No,No,No,No,No,No,No
+https://github.com/apache/zeppelin,Yes,No,No,Yes,Yes,No,No,No,Yes,No,No,No,No
+https://github.com/kevin-wayne/algs4,No,Yes,No,No,Yes,No,No,No,No,No,No,No,No
+https://github.com/Alluxio/alluxio,Yes,No,Yes,No,Yes,No,No,No,Yes,Yes GHA,No,No,No
+https://github.com/javaee/jersey,Yes,No,Yes,Yes,Yes,No,No,No,No,No,No,No,No
+https://github.com/spring-projects/spring-integration-samples,No,Yes,Yes,No,No,No,No,Yes,No,No,No,No,No
+https://github.com/mybatis/generator,No,No,No,No,No,No,No,No,Yes,Yes GHA,No,No,No
+https://github.com/antlr/antlr4,Yes,No,No,No,Yes,No,No,Yes,Yes,No,No,Yes GHA,No
+https://github.com/TEAMMATES/teammates,No,Yes,Yes,No,No,Yes,No,No,Yes,Yes GHA,No,No,No
+https://github.com/stleary/JSON-java,No,Yes,Yes,No,Yes,No,No,No,Yes,No,No,Yes GHA,No
+https://github.com/justauth/JustAuth,Yes,No,Yes,Yes,Yes,No,Yes,Yes,No,No,Yes Travis,Yes Travis,No
+https://github.com/shopizer-ecommerce/shopizer,Yes,No,No,No,Yes,No,No,No,No,No,No,No,No
+https://github.com/Netflix/zuul,No,Yes,No,No,Yes,No,No,No,Yes,No,No,No,No
+https://github.com/apache/nifi,Yes,No,No,No,Yes,No,No,No,Yes,No,No,No,No
+https://github.com/apache/shiro,Yes,No,Yes,No,Yes,No,No,No,Yes,No,No,No,No
+https://github.com/wildfly/wildfly,Yes,No,Yes,No,Yes,No,No,No,Yes,No,No,No,No
+https://github.com/edureka-git/DevOpsClassCodes,Yes,No,Yes,Yes,Yes,No,No,No,No,No,No,No,No
+https://github.com/neo4j/neo4j,Yes,No,No,No,Yes,No,No,No,No,No,No,No,No
+https://github.com/tuguangquan/mybatis,Yes,No,No,Yes,No,No,No,Yes,No,No,No,No,No
+https://github.com/wxiaoqi/Spring-Cloud-Platform,Yes,No,No,No,Yes,No,No,No,No,No,No,No,No
+https://github.com/swagger-api/swagger-core,Yes,No,Yes,No,Yes,No,No,No,Yes,No,No,Yes GHA,No
+https://github.com/yasserg/crawler4j,No,Yes,No,No,Yes,No,No,Yes,No,No,No,No,No
+https://github.com/brianfrankcooper/YCSB,Yes,No,No,No,Yes,No,No,Yes,No,No,No,No,No
+https://github.com/eclipse-vertx/vert.x,Yes,No,No,No,Yes,No,No,No,Yes,No,No,No,No
+https://github.com/weibocom/motan,Yes,No,No,No,Yes,No,No,Yes,No,No,No,No,No
+https://github.com/dropwizard/metrics,Yes,No,Yes,No,Yes,No,No,No,Yes,No,No,No,No
+https://github.com/apache/dubbo-spring-boot-project,Yes,No,No,No,Yes,Yes,Yes,Yes,Yes,No,No,No,No
+https://github.com/se-edu/addressbook-level4,No,Yes,Yes,No,No,No,No,Yes,No,No,No,No,No
+https://github.com/flowable/flowable-engine,Yes,No,Yes,No,Yes,No,No,No,Yes,No,No,Yes GHA,No
+https://github.com/jhy/jsoup,Yes,No,No,No,Yes,No,No,No,Yes,No,No,No,No
+https://github.com/cucumber/cucumber-jvm,Yes,No,No,No,Yes,No,No,No,Yes,Yes GHA,No,Yes GHA,No
+https://github.com/alibaba/jstorm,Yes,No,No,No,Yes,No,No,No,No,No,No,No,No
+https://github.com/spring-projects/spring-batch,Yes,No,Yes,No,Yes,No,No,No,Yes,No,No,No,No
+https://github.com/apache/dubbo-admin,Yes,No,Yes,No,No,No,No,No,Yes,Yes GHA,No,Yes GHA,No
+https://github.com/realm/realm-java,No,Yes,No,No,Yes,No,No,No,Yes,No,No,No,No
+https://github.com/lzyzsd/JsBridge,No,Yes,No,No,Yes,No,No,No,No,No,No,No,No
+https://github.com/JabRef/jabref,No,Yes,Yes,No,Yes,Yes,No,No,Yes,Yes GHA,No,No,No
+https://github.com/quarkusio/quarkus,Yes,No,No,No,Yes,No,No,No,Yes,No,No,No,No
+https://github.com/azkaban/azkaban,No,Yes,Yes,No,No,No,Yes,Yes,No,No,No,No,No
+https://github.com/gephi/gephi,Yes,No,No,No,Yes,No,No,Yes,No,No,No,Yes Travis,No
+https://github.com/apache/flume,Yes,No,No,No,Yes,No,No,Yes,No,No,No,No,No
+https://github.com/mrniko/netty-socketio,Yes,No,No,No,Yes,No,No,No,No,No,No,No,No
+https://github.com/springfox/springfox,No,Yes,Yes,No,Yes,No,No,No,No,No,No,No,No
+https://github.com/apache/calcite,No,No,No,No,No,No,No,Yes,Yes,No,No,Yes GHA,No
+https://github.com/codingapi/tx-lcn,Yes,No,Yes,No,Yes,No,Yes,Yes,No,No,No,No,No
+https://github.com/mongodb/mongo-java-driver,No,Yes,Yes,No,Yes,No,No,No,No,No,No,No,No
+https://github.com/kubesphere/devops-java-sample,Yes,No,Yes,No,No,No,No,No,No,No,No,No,No
+https://github.com/wildfirechat/server,Yes,No,No,No,Yes,No,No,Yes,No,No,No,No,No
+https://github.com/apache/kylin,Yes,No,Yes,No,Yes,No,Yes,Yes,Yes,Yes Travis,No,No,No
+https://github.com/Meituan-Dianping/Leaf,Yes,No,Yes,No,No,No,No,No,No,No,No,No,No
+https://github.com/OpenFeign/feign,Yes,No,No,No,Yes,No,No,No,No,No,No,No,No
+https://github.com/Justson/AgentWeb,No,Yes,No,No,Yes,No,No,No,No,No,No,No,No
+https://github.com/joelittlejohn/jsonschema2pojo,Yes,No,No,No,Yes,No,No,No,Yes,No,No,No,No
+https://github.com/NLPchina/elasticsearch-sql,Yes,No,No,No,Yes,No,No,Yes,No,No,No,Yes Travis,No
+https://github.com/google/guice,Yes,No,No,No,Yes,No,No,No,Yes,No,No,Yes GHA,No
+https://github.com/CrawlScript/WebCollector,Yes,No,No,Yes,Yes,No,No,No,No,No,No,No,No
+https://github.com/Red5/red5-server,Yes,No,No,No,Yes,No,No,Yes,No,No,No,No,No
+https://github.com/dromara/hmily,Yes,No,No,Yes,Yes,No,No,No,Yes,No,Yes GHA,Yes GHA,No
+https://github.com/zuihou/lamp-cloud,Yes,No,No,No,Yes,No,No,No,No,No,No,No,No
+https://github.com/ankidroid/Anki-Android,No,Yes,No,No,No,Yes,No,No,Yes,Yes GHA,No,No,No
+https://github.com/apache/ambari,Yes,No,No,No,Yes,No,No,No,No,No,No,No,No
+https://github.com/spring-petclinic/spring-framework-petclinic,Yes,No,Yes,No,No,No,No,Yes,No,No,No,No,No
+https://github.com/apache/commons-lang,Yes,No,No,No,Yes,No,No,Yes,Yes,Yes Travis,No,Yes Travis,No
+https://github.com/intuit/karate,Yes,No,No,No,Yes,No,No,No,Yes,No,No,No,No
+https://github.com/pmd/pmd,Yes,No,Yes,No,Yes,No,No,No,Yes,No,No,No,No
+https://github.com/alibaba/transmittable-thread-local,Yes,No,Yes,No,Yes,No,No,Yes,No,No,No,No,No
+https://github.com/graphhopper/graphhopper,Yes,No,No,No,Yes,No,No,Yes,Yes,No,No,No,No
+https://github.com/apache/nutch,No,No,No,No,No,No,No,No,Yes,No,No,Yes GHA,No
+https://github.com/flyway/flyway,Yes,No,No,No,Yes,No,No,Yes,No,No,No,No,No
+https://github.com/microservices-demo/carts,Yes,No,Yes,No,No,No,No,Yes,Yes,No,No,No,No
+https://github.com/square/javapoet,Yes,No,No,No,No,No,No,No,Yes,No,No,Yes GHA,No
+https://github.com/json-path/JsonPath,No,Yes,No,No,Yes,No,No,Yes,Yes,No,No,No,No
+https://github.com/jwtk/jjwt,Yes,No,No,No,Yes,No,No,Yes,No,No,No,No,No
+https://github.com/fossasia/susi_server,No,Yes,Yes,No,Yes,No,Yes,Yes,No,Yes Travis,No,Yes Travis,No
+https://github.com/apache/parquet-mr,Yes,No,No,Yes,Yes,No,No,Yes,Yes,No,No,Yes GHA,No
+https://github.com/litesuits/android-common,No,Yes,No,No,Yes,No,No,No,No,No,No,No,No
+https://github.com/GoogleContainerTools/jib,No,Yes,Yes,No,Yes,No,No,No,Yes,Yes GHA,No,No,No
+https://github.com/Bukkit/Bukkit,Yes,No,No,No,Yes,No,No,No,No,No,No,No,No
+https://github.com/sarxos/webcam-capture,Yes,No,No,Yes,Yes,No,No,Yes,No,No,Yes Travis,No,No
+https://github.com/nextcloud/android,No,Yes,Yes,No,No,No,No,No,Yes,No,No,No,No
+https://github.com/Nepxion/Discovery,Yes,No,No,No,Yes,No,No,Yes,Yes,No,No,No,No
+https://github.com/getodk/collect,No,Yes,Yes,No,No,No,No,No,No,No,No,No,No
+https://github.com/apache/mahout,Yes,No,No,No,Yes,No,No,Yes,Yes,No,No,Yes Travis,No
+https://github.com/fabric8io/kubernetes-client,Yes,No,Yes,No,Yes,No,No,No,Yes,No,No,Yes GHA,No
+https://github.com/Javen205/IJPay,Yes,No,No,Yes,Yes,No,Yes,Yes,No,No,Yes Travis,Yes Travis,No
+https://github.com/geotools/geotools,Yes,No,Yes,No,Yes,No,No,No,Yes,No,No,No,No
+https://github.com/apache/hudi,Yes,No,Yes,No,Yes,No,No,Yes,Yes,No,No,No,No
+https://github.com/JesusFreke/smali,No,Yes,No,No,Yes,No,No,No,No,No,No,No,No
+https://github.com/resilience4j/resilience4j,No,Yes,Yes,No,No,No,No,No,Yes,No,No,No,No
+https://github.com/Meituan-Dianping/walle,No,Yes,No,No,Yes,No,No,No,No,No,No,No,No
+https://github.com/graphql-java/graphql-java,No,Yes,No,No,Yes,No,No,No,Yes,No,No,No,No
+https://github.com/commons-app/apps-android-commons,No,Yes,Yes,No,No,No,Yes,Yes,Yes,Yes GHA,No,No,No
+https://github.com/tronprotocol/java-tron,No,Yes,Yes,No,No,No,Yes,Yes,No,Yes Travis,No,No,No
+https://github.com/fossasia/phimpme-android,No,Yes,Yes,No,No,No,Yes,Yes,No,Yes Travis,No,No,No
+https://github.com/DSpace/DSpace,Yes,No,Yes,No,Yes,No,No,No,Yes,No,No,No,No
+https://github.com/junit-team/junit5,No,No,No,No,No,No,No,No,Yes,Yes GHA,No,No,No
+https://github.com/ethereum/ethereumj,No,Yes,No,No,Yes,No,No,Yes,No,Yes Travis,No,No,No
+https://github.com/guoguibing/librec,Yes,No,No,No,Yes,No,No,No,No,No,No,No,No
+https://github.com/aliyun/aliyun-openapi-java-sdk,No,No,No,No,No,No,Yes,Yes,No,No,No,No,No
+https://github.com/spring-projects/spring-kafka,No,Yes,Yes,No,Yes,No,No,No,Yes,No,No,No,No
+https://github.com/federicoiosue/Omni-Notes,No,Yes,Yes,No,No,No,No,No,Yes,Yes GHA,No,No,No
+https://github.com/fyhertz/libstreaming,Yes,No,No,No,Yes,No,No,No,No,No,No,No,No
+https://github.com/jOOQ/jOOQ,Yes,No,No,No,Yes,No,No,Yes,No,No,No,No,No
+https://github.com/jMonkeyEngine/jmonkeyengine,No,Yes,No,No,Yes,No,No,No,Yes,No,No,Yes GHA,No
+https://github.com/SpigotMC/BungeeCord,Yes,No,No,No,Yes,No,No,No,Yes,No,No,No,No
+https://github.com/dreamhead/moco,No,Yes,No,No,Yes,No,No,Yes,No,No,No,No,No
+https://github.com/alibaba/yugong,Yes,No,No,No,Yes,No,No,No,No,No,No,No,No
+https://github.com/apache/fineract,No,Yes,Yes,No,Yes,No,No,Yes,Yes,No,No,No,No
+https://github.com/facebookarchive/rebound,No,Yes,No,No,Yes,No,No,Yes,No,No,No,No,No
+https://github.com/googlemaps/google-maps-services-java,No,Yes,Yes,No,Yes,Yes,No,No,Yes,Yes GHA,No,No,No
+https://github.com/roboguice/roboguice,Yes,No,Yes,No,Yes,No,No,Yes,No,No,No,No,No
+https://github.com/pubnub/java,No,Yes,Yes,No,Yes,No,No,Yes,Yes,Yes Travis,No,No,No
+https://github.com/btraceio/btrace,No,Yes,Yes,No,Yes,No,No,No,Yes,No,No,No,No
+https://github.com/LuckyJayce/LargeImage,No,Yes,No,No,Yes,No,No,No,No,No,No,No,No
+https://github.com/cs125-illinois/Fall-2017-Lab7,No,Yes,No,No,Yes,No,No,No,No,No,No,No,No
+https://github.com/signalapp/libsignal-protocol-java,No,Yes,No,No,Yes,No,No,No,No,No,No,No,No
+https://github.com/simpligility/android-maven-plugin,Yes,No,No,No,Yes,No,No,Yes,No,No,No,No,No
+https://github.com/xwiki/xwiki-platform,Yes,No,No,No,Yes,No,No,No,No,No,No,No,No
+https://github.com/springframeworkguru/spring5-reactive-mongo-recipe-app,No,Yes,Yes,No,No,No,No,No,No,No,No,No,No
+https://github.com/spotbugs/spotbugs,No,Yes,Yes,No,No,No,No,No,Yes,No,No,No,No
+https://github.com/ballesterosam/search-guard,Yes,No,No,Yes,Yes,No,No,Yes,No,No,Yes Travis,No,No
+https://github.com/springframeworkguru/spring5-mysql-recipe-app,Yes,No,No,Yes,No,No,No,No,No,No,No,No,No
+https://github.com/ContainX/openstack4j,Yes,No,No,No,Yes,No,No,Yes,No,No,No,No,No
+https://github.com/find-sec-bugs/find-sec-bugs,Yes,No,Yes,No,Yes,No,Yes,Yes,Yes,Yes Travis,No,No,No
+https://github.com/nutzam/nutz,Yes,No,No,No,Yes,No,No,Yes,No,No,No,No,No
+https://github.com/AbrahamCaiJin/CommonUtilLibrary,No,Yes,No,No,Yes,No,No,No,No,No,No,No,No
+https://github.com/kubernetes-client/java,Yes,No,No,No,Yes,No,No,No,Yes,No,No,No,No
+https://github.com/jeremylong/DependencyCheck,Yes,No,Yes,No,Yes,No,No,No,Yes,Yes GHA,No,Yes GHA,No
+https://github.com/datastax/java-driver,Yes,No,Yes,No,Yes,No,No,Yes,No,Yes Travis,No,Yes Travis,Yes Travis
+https://github.com/qos-ch/slf4j,Yes,No,No,No,Yes,No,No,Yes,No,No,No,No,No
+https://github.com/mtedone/podam,Yes,No,Yes,No,Yes,No,Yes,Yes,No,No,No,No,No
+https://github.com/apache/httpcomponents-client,Yes,No,No,No,Yes,No,No,Yes,Yes,No,No,No,No
+https://github.com/alibaba/dubbo-spring-boot-starter,Yes,No,No,No,Yes,No,No,No,No,No,No,No,No
+https://github.com/burhanrashid52/PhotoEditor,No,Yes,No,No,No,No,No,No,Yes,No,No,Yes GHA,No
+https://github.com/rubenlagus/TelegramBots,Yes,No,No,No,Yes,No,Yes,Yes,No,No,No,No,No
+https://github.com/biezhi/wechat-api,Yes,No,No,No,Yes,No,No,Yes,No,No,No,No,No
+https://github.com/google/tsunami-security-scanner,No,Yes,No,No,Yes,No,No,No,Yes,No,No,Yes GHA,No
+https://github.com/searchbox-io/Jest,Yes,No,No,Yes,Yes,No,No,Yes,No,No,Yes Travis,No,No
+https://github.com/parse-community/Parse-SDK-Android,No,Yes,No,No,No,No,No,Yes,No,Yes Travis,No,No,No
+https://github.com/xianrendzw/EasyReport,Yes,No,No,No,Yes,No,No,Yes,No,No,No,No,No
+https://github.com/g0t4/jgsu-spring-petclinic,Yes,No,Yes,No,No,No,No,Yes,No,No,No,No,No
+https://github.com/wcaquinocursos/tasks-backend,Yes,No,Yes,No,No,No,No,No,No,No,No,No,No
+https://github.com/cabaletta/baritone,No,Yes,No,No,Yes,No,No,No,Yes,No,No,No,No
