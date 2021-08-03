@@ -29,16 +29,16 @@ for repository in repositories:
     # Making all columns "No" as default
     repository["Maven"] = "No"
     repository["Gradle"] = "No"
-    repository["Jacoco"] = "No"
-    repository["Cobertura"] = "No"
-    repository["Javadoc"] = "No"
+    repository["Jacoco"] = "/"
+    repository["Cobertura"] = "/"
+    repository["Javadoc"] = "/"
     repository["CodecovT"] = "No"
-    repository["CodecovG"] = "No"
+    repository["CodecovG"] = "-"
     repository["Travis CI"] = "No"
     repository["Github Actions"] = "No"
-    repository["yml_jacoco"] = "No"
-    repository["yml_cobertura"] = "No"
-    repository["yml_javadoc"] = "No"
+    repository["yml_jacoco"] = "-"
+    repository["yml_cobertura"] = "-"
+    repository["yml_javadoc"] = "-"
     repository["jacoco.skip=true"] = "No"
     usableFlag = 0
     files = requests.get(url="https://api.github.com/repos/" + repository["name"] + "/contents", headers=headers).json()
@@ -87,14 +87,11 @@ for repository in repositories:
                                         headers=headers).json()
                 gradle_content = base64.b64decode(response["content"]).decode("utf-8")
                 if "jacoco" in gradle_content:
-                    if repository["Jacoco"] =="No" : repository["Jacoco"] ="build.gradle"
-                    else : repository["Jacoco"] = repository["Jacoco"] + ", build.gradle"
+                    repository["Jacoco"] = repository["Jacoco"] + "/ build.gradle"
                 if "cobertura" in gradle_content:
-                    if repository["Cobertura"] =="No" : repository["Cobertura"] = "build.gradle"
-                    else : repository["Cobertura"] = repository["Cobertura"] + ", build.gradle"
+                    repository["Cobertura"] = repository["Cobertura"] + "/ build.gradle"
                 if "javadoc" in gradle_content or "Javadoc" in gradle_content:
-                    if repository["Javadoc"] =="No" : repository["Javadoc"] = "build.gradle"
-                    else : repository["Javadoc"] = repository["Javadoc"] + ", build.gradle"
+                    repository["Javadoc"] = repository["Javadoc"] + "/ build.gradle"
                 break
         except:
             print("one skipped")
@@ -116,17 +113,13 @@ for repository in repositories:
                     name = "file" + cnt
                     # checking if the *.yml contains "https://codecov.io/bash" keyword
                     if "https://codecov.io/bash" in yml_content or "codecov/codecov-action@" in yml_content:
-                        if repository["CodecovG"] == "No": repository["CodecovG"] = name
-                        else: repository["CodecovG"] = repository["CodecovG"] + "/ "+ name
+                        repository["CodecovG"] = repository["CodecovG"] + "/ "+ name
                     if "jacoco" in yml_content and "jacoco.skip=true" not in yml_content and "jacoco:report coveralls" not in yml_content:
-                        if repository["yml_jacoco"] == "No": repository["yml_jacoco"] = name
-                        else: repository["yml_jacoco"] = repository["yml_jacoco"] + "/ "+ name
+                        repository["yml_jacoco"] = repository["yml_jacoco"] + "/ "+ name
                     if "cobertura" in yml_content:
-                        if repository["yml_cobertura"] == "No": repository["yml_cobertura"] = name
-                        else: repository["yml_cobertura"] = repository["yml_cobertura"] + "/ "+ name
+                        repository["yml_cobertura"] = repository["yml_cobertura"] + "/ "+ name
                     if "javadoc" in yml_content and "maven.javadoc.skip=true" not in yml_content and "maven.javadoc.skip=TRUE" not in yml_content:
-                        if repository["yml_javadoc"] == "No": repository["yml_javadoc"] = name
-                        else: repository["yml_javadoc"] = repository["yml_javadoc"] + "/ "+ name
+                        repository["yml_javadoc"] = repository["yml_javadoc"] + "/ "+ name
     except:
         print("one skipped")
     print("second files period done")
