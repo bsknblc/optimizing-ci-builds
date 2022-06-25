@@ -11,8 +11,8 @@ headers = {
 
 repositories = []
 # 30*30=900
-# There are 30 repos in every page, so with 30 iterations we get 900 java repositories.
-for i in range(1, 31):
+# There are 30 repos in every page, so with 33 iterations we get 990 java repositories.
+for i in range(0, 33):
     try:
         url = "https://api.github.com/search/repositories?q=language:java&sort=forks&order=desc&page=" + str(i)
         response = requests.get(url=url, headers=headers).json()
@@ -20,7 +20,17 @@ for i in range(1, 31):
             repositories.append({"name": repository["full_name"], "link": repository["html_url"]})
     except:
         print("one skipped")
-print("repos taken")
+        repositories.append({"name": "skipped", "link": "skipped"})
+
+
+# Save repositories to a csv file
+with open("repositories.csv", "w", newline="") as csv_file:
+    csv_writer = csv.writer(csv_file)
+    csv_writer.writerow(["Name", "Link"])
+    for repository in repositories:
+        csv_writer.writerow([repository["full_name"], repository["html_url"]])
+
+print("Repos taken")
 filtered_repositories = []
 
 for repository in repositories:
@@ -65,7 +75,8 @@ for repository in repositories:
                     repository["jacoco.skip=true"] = "Yes Travis"
                     usableFlag += 1
         except:
-            print("one skipped")
+            print("one skipped in travis file")
+            repository["Travis CI"] = "Skipped"
         # checking if the repository has pom.xml in its root
         try:
             if file["name"] == "pom.xml":
@@ -87,6 +98,7 @@ for repository in repositories:
                     break
         except:
             print("one skipped")
+            repository["Maven"] = "Skipped"
         # checking if the repository has build-gradle in its root
         try:
             if file["name"] == "build.gradle":
@@ -106,6 +118,7 @@ for repository in repositories:
                 break
         except:
             print("one skipped")
+            repository["Gradle"] = "Skipped"
     print("first files period done")
     # checking if the repository has *.yml file in /.github/workflows
     try:
@@ -137,6 +150,7 @@ for repository in repositories:
                         usableFlag += 1
     except:
         print("one skipped")
+        repository["Github Actions"] = "Skipped"
     print("second files period done")
     if usableFlag > 0:
         filtered_repositories.append(copy.deepcopy(repository))
