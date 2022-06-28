@@ -44,7 +44,6 @@ while i < len(repositories):
         repository["SHA"] = "Skipped"
         repositories[i] = repository
         time.sleep(5)
-print(repositories)
 
 # Save repositories to a csv file
 with open("repositories.csv", "w", newline="") as csv_file:
