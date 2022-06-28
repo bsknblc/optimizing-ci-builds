@@ -10,23 +10,46 @@ headers = {
 }
 
 repositories = []
-# There are 30 repos in every page, so with 33 iterations we get 990 java repositories.
-for i in range(0, 33):
+i = 0
+# There are 30 repos in every page, so with 34 iterations we get 1020 java repositories.
+while len(repositories) < 1000:
     try:
         url = "https://api.github.com/search/repositories?q=language:java&sort=forks&order=desc&page=" + str(i)
         response = requests.get(url=url, headers=headers).json()
         for repository in response["items"]:
-            dt_string = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
-            repositories.append({"name": repository["full_name"], "link": repository["html_url"], "date": dt_string})
+            if repository["html_url"] not in repositories:
+                dt_string = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
+                repositories.append({"name": repository["full_name"], "link": repository["html_url"],
+                                     "default_branch": repository["default_branch"],
+                                     "stargazers_count": repository["stargazers_count"],
+                                     "forks_count": repository["forks_count"], "date": dt_string})
+        i = i + 1
     except:
-        print("exception")
         time.sleep(5)
-        i = i-1
-print("Repositories taken.")
+        i = int(len(repositories) / 30)
+print("Repositories taken, number of repositories: " + str(len(repositories)))
+print("")
+
+i = 0
+while i < len(repositories):
+    try:
+        repository = repositories[i]
+        url = "https://api.github.com/repos/"+repository["name"]+"/branches/" + repository["default_branch"]
+        response = requests.get(url=url, headers=headers).json()
+        repository["SHA"] = response['commit']['sha']
+        repositories[i] = repository
+        i = i+1
+    except:
+        repository = repositories[i]
+        repository["SHA"] = "Skipped"
+        repositories[i] = repository
+        time.sleep(5)
+print(repositories)
 
 # Save repositories to a csv file
 with open("repositories.csv", "w", newline="") as csv_file:
     csv_writer = csv.writer(csv_file)
-    csv_writer.writerow(["Name", "Link", "Date"])
+    csv_writer.writerow(["Name", "Link", "Default Branch", "SHA", "Stargazers Count", "Forks Count", "Date"])
     for repository in repositories:
-        csv_writer.writerow([repository["name"], repository["link"], repository["date"]])
+        csv_writer.writerow([repository["name"], repository["link"], repository["default_branch"], repository["SHA"],
+                             repository["stargazers_count"], repository["forks_count"], repository["date"]])

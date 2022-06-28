@@ -45,7 +45,7 @@ for repository in repositories:
     try:
         # checking if the repository has *.yml file in /.github/workflows
         GHAFiles = requests.get(
-            url="https://api.github.com/repos/" + repository["name"] + "/contents/.github/workflows",
+            url="https://api.github.com/repos/" + repository["name"] + "/contents/.github/workflows23"3,
             headers=headers).json()
         for file in GHAFiles:
             if "name" in file:
