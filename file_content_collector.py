@@ -59,16 +59,16 @@ for repository in repositories:
                 pom_content = base64.b64decode(response["content"]).decode("utf-8")
                 # checking if the pom.xml contains "jacoco-maven-plugin" keyword
                 if "jacoco-maven-plugin" in pom_content:
-                    repository["MJacoco"] = repository["MJacoco"].append(file_path+";")
+                    repository["MJacoco"] = repository["MJacoco"]+ file_path+";"
                 # checking if the pom.xml contains "cobertura-maven-plugin" keyword
                 if "cobertura-maven-plugin" in pom_content:
-                    repository["MCobertura"] = repository["MCobertura"].append(file_path+";")
+                    repository["MCobertura"] = repository["MCobertura"]+file_path+";"
                 if "maven-javadoc-plugin" in pom_content:
-                    repository["MJavadoc"] = repository["MJavadoc"].append(file_path+";")
+                    repository["MJavadoc"] = repository["MJavadoc"]+file_path+";"
             except:
-                repository["MJacoco"] = repository["MJacoco"].append("Skipped;")
-                repository["MCobertura"] = repository["MCobertura"].append("Skipped;")
-                repository["MJavadoc"] = repository["MJavadoc"].append("Skipped;")
+                repository["MJacoco"] = repository["MJacoco"]+"Skipped;"
+                repository["MCobertura"] = repository["MCobertura"]+"Skipped;"
+                repository["MJavadoc"] = repository["MJavadoc"]+"Skipped;"
 
     # checking if the repository has build-gradle in its files
     if not repository["Gradle"] == "":
@@ -80,16 +80,16 @@ for repository in repositories:
                     headers=headers).json()
                 gradle_content = base64.b64decode(response["content"]).decode("utf-8")
                 if "jacoco" in gradle_content:
-                    repository["GJacoco"] = repository["GJacoco"].append(file_path+";")
+                    repository["GJacoco"] = repository["GJacoco"]+file_path+";"
                 if "cobertura" in gradle_content:
-                    repository["GCobertura"] = repository["GCobertura"].append(file_path+";")
+                    repository["GCobertura"] = repository["GCobertura"]+file_path+";"
                 if "javadoc" in gradle_content or "Javadoc" in gradle_content:
-                    repository["GJavadoc"] = repository["GJavadoc"].append(file_path+";")
+                    repository["GJavadoc"] = repository["GJavadoc"]+file_path+";"
                 break
             except:
-                repository["GJacoco"] = repository["GJacoco"].append("Skipped;")
-                repository["GCobertura"] = repository["GCobertura"].append("Skipped;")
-                repository["GJavadoc"] = repository["GJavadoc"].append("Skipped;")
+                repository["GJacoco"] = repository["GJacoco"]+"Skipped;"
+                repository["GCobertura"] = repository["GCobertura"]+"Skipped;"
+                repository["GJavadoc"] = repository["GJavadoc"]+"Skipped;"
 
     # checking if the repository has .travis.yml in its files
     if not repository["Travis CI"] == "":
@@ -101,18 +101,18 @@ for repository in repositories:
                     headers=headers).json()
                 travis_content = base64.b64decode(response["content"]).decode("utf-8")
                 if "https://codecov.io/bash" in travis_content:
-                    repository["Tyml_codecov"] = repository["Tyml_codecov"].append(file_path+";")
+                    repository["Tyml_codecov"] = repository["Tyml_codecov"]+file_path+";"
                 if "jacoco" in travis_content and "jacoco.skip=true" not in travis_content:
-                    repository["Tyml_jacoco"] = repository["Tyml_jacoco"].append(file_path+";")
+                    repository["Tyml_jacoco"] = repository["Tyml_jacoco"]+file_path+";"
                 if "cobertura" in travis_content:
-                    repository["Tyml_cobertura"] = repository["Tyml_cobertura"].append(file_path+";")
+                    repository["Tyml_cobertura"] = repository["Tyml_cobertura"]+file_path+";"
                 if "javadoc" in travis_content:
-                    repository["Tyml_javadoc"] = repository["Tyml_javadoc"].append(file_path+";")
+                    repository["Tyml_javadoc"] = repository["Tyml_javadoc"]+file_path+";"
             except:
-                repository["Tyml_codecov"] = repository["Tyml_codecov"].append("Skipped;")
-                repository["Tyml_jacoco"] = repository["Tyml_jacoco"].append("Skipped;")
-                repository["Tyml_cobertura"] = repository["Tyml_cobertura"].append("Skipped;")
-                repository["Tyml_javadoc"] = repository["Tyml_javadoc"].append("Skipped;")
+                repository["Tyml_codecov"] = repository["Tyml_codecov"]+"Skipped;"
+                repository["Tyml_jacoco"] = repository["Tyml_jacoco"]+"Skipped;"
+                repository["Tyml_cobertura"] = repository["Tyml_cobertura"]+"Skipped;"
+                repository["Tyml_javadoc"] = repository["Tyml_javadoc"]+"Skipped;"
 
         # checking if the repository has *.yml file in /.github/workflows
     if not repository["Github Actions"] == "":
@@ -125,18 +125,18 @@ for repository in repositories:
                 yml_content = base64.b64decode(response["content"]).decode("utf-8")
                 # checking if the *.yml contains "https://codecov.io/bash" keyword
                 if "https://codecov.io/bash" in yml_content:
-                    repository["Gyml_codecov"] = repository["Gyml_codecov"].append(file_path+";")
+                    repository["Gyml_codecov"] = repository["Gyml_codecov"]+file_path+";"
                 if "jacoco" in yml_content and "jacoco.skip=true" not in yml_content:
-                    repository["Gyml_jacoco"] = repository["Gyml_jacoco"].append(file_path+";")
+                    repository["Gyml_jacoco"] = repository["Gyml_jacoco"]+file_path+";"
                 if "cobertura" in yml_content:
-                    repository["Gyml_cobertura"] = repository["Gyml_cobertura"].append(file_path+";")
+                    repository["Gyml_cobertura"] = repository["Gyml_cobertura"]+file_path+";"
                 if "javadoc" in yml_content:
-                    repository["Gyml_javadoc"] = repository["Gyml_javadoc"].append(file_path+";")
+                    repository["Gyml_javadoc"] = repository["Gyml_javadoc"]+file_path+";"
             except:
-                repository["Gyml_codecov"] = repository["Gyml_codecov"].append("Skipped;")
-                repository["Gyml_jacoco"] = repository["Gyml_jacoco"].append("Skipped;")
-                repository["Gyml_cobertura"] = repository["Gyml_cobertura"].append("Skipped;")
-                repository["Gyml_javadoc"] = repository["Gyml_javadoc"].append("Skipped;")
+                repository["Gyml_codecov"] = repository["Gyml_codecov"]+"Skipped;"
+                repository["Gyml_jacoco"] = repository["Gyml_jacoco"]+"Skipped;"
+                repository["Gyml_cobertura"] = repository["Gyml_cobertura"]+"Skipped;"
+                repository["Gyml_javadoc"] = repository["Gyml_javadoc"]+"Skipped;"
     i = i+1
     print(i)
 

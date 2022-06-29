@@ -43,6 +43,8 @@ while i < len(repositories):
             if ".github/workflows" in file["path"] and (".yml" in file["path"] or ".yaml" in file["path"]):
                 repository["Github Actions"] = repository["Github Actions"] + file["path"] + ";"
         repositories[i] = repository
+        i = i+1
+        print(i)
     except:
         repository["Maven"] = "Skipped"
         repository["Gradle"] = "Skipped"
