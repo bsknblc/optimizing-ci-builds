@@ -40,27 +40,13 @@ while i < len(repositories):
             # checking if the repository has .travis.yml in its root
             if ".travis.yml" in file["path"]:
                 repository["Travis CI"] = repository["Travis CI"] + file["path"]+";"
+            if ".github/workflows" in file["path"] and (".yml" in file["path"] or ".yaml" in file["path"]):
+                repository["Github Actions"] = repository["Github Actions"] + file["path"] + ";"
         repositories[i] = repository
     except:
         repository["Maven"] = "Skipped"
         repository["Gradle"] = "Skipped"
         repository["Travis CI"] = "Skipped"
-        repositories[i] = repository
-        time.sleep(3)
-
-    try:
-        # checking if the repository has *.yml file in /.github/workflows
-        GHAFiles = requests.get(
-            url="https://api.github.com/repos/" + repository["name"] + "/contents/.github/workflows",
-            headers=headers).json()
-        for file in GHAFiles:
-            if "name" in file:
-                if ".yml" in file["name"] or ".yaml" in file["name"]:
-                    repository["Github Actions"] = repository["Github Actions"] + file["name"] + ";"
-        repositories[i] = repository
-        i = i + 1
-        print(i)
-    except:
         repository["Github Actions"] = "Skipped"
         repositories[i] = repository
         time.sleep(3)

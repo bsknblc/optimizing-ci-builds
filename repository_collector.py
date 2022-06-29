@@ -10,6 +10,7 @@ headers = {
 }
 
 repositories = []
+names = []
 i = 0
 # There are 30 repos in every page, so with 34 iterations we get 1020 java repositories.
 while len(repositories) < 1000:
@@ -17,28 +18,34 @@ while len(repositories) < 1000:
         url = "https://api.github.com/search/repositories?q=language:java&sort=forks&order=desc&page=" + str(i)
         response = requests.get(url=url, headers=headers).json()
         for repository in response["items"]:
-            if repository["html_url"] not in repositories:
+            item = repository["full_name"]
+            if item not in names:
+                names.append(item)
                 dt_string = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
                 repositories.append({"name": repository["full_name"], "link": repository["html_url"],
                                      "default_branch": repository["default_branch"],
                                      "stargazers_count": repository["stargazers_count"],
                                      "forks_count": repository["forks_count"], "date": dt_string})
+        print(i)
         i = i + 1
     except:
         time.sleep(5)
         i = int(len(repositories) / 30)
 print("Repositories taken, number of repositories: " + str(len(repositories)))
 print("")
+repositories = sorted(repositories, key=lambda x: x['forks_count'])
+
 
 i = 0
 while i < len(repositories):
     try:
         repository = repositories[i]
-        url = "https://api.github.com/repos/"+repository["name"]+"/branches/" + repository["default_branch"]
+        url = "https://api.github.com/repos/" + repository["name"] + "/branches/" + repository["default_branch"]
         response = requests.get(url=url, headers=headers).json()
         repository["SHA"] = response['commit']['sha']
         repositories[i] = repository
-        i = i+1
+        i = i + 1
+        print(i)
     except:
         repository = repositories[i]
         repository["SHA"] = "Skipped"

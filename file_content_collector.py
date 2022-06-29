@@ -16,7 +16,9 @@ with open("root_content.csv", "r", newline="") as csv_file:
     next(csv_reader, None)
     for row in csv_reader:
         repositories.append(
-            {"name": row[0], "link": row[1], "Maven": row[2], "Gradle": row[3], "Travis CI": row[4], "Github Actions": row[5]})
+            {"name": row[0], "link": row[1], "default_branch": row[2], "sha": row[3],
+             "stargazers_count": row[4], "forks_count": row[5],
+             "Maven": row[6], "Gradle": row[7], "Travis CI": row[8], "Github Actions": row[9]})
 print("Data have been read.")
 
 filtered_repositories = []
@@ -47,7 +49,7 @@ for repository in repositories:
     repository["Gyml_javadoc"] = ""
 
     # checking if the repository has pom.xml in its root
-    if repository["Maven"] == "Yes":
+    if not repository["Maven"] == "":
         try:
             response = requests.get(url="https://api.github.com/repos/" + repository["name"] + "/contents/pom.xml",
                                     headers=headers).json()
@@ -66,7 +68,7 @@ for repository in repositories:
             repository["MJavadoc"] = "Skipped"
 
     # checking if the repository has build-gradle in its root
-    if repository["Gradle"] == "Yes":
+    if not repository["Gradle"] == "":
         try:
             response = requests.get(
                 url="https://api.github.com/repos/" + repository["name"] + "/contents/build.gradle",
@@ -85,7 +87,7 @@ for repository in repositories:
             repository["GJavadoc"] = "Skipped"
 
     # checking if the repository has .travis.yml in its root
-    if repository["Travis CI"] == "Yes":
+    if not repository["Travis CI"] == "":
         try:
             response = requests.get(
                 url="https://api.github.com/repos/" + repository["name"] + "/contents/.travis.yml",
