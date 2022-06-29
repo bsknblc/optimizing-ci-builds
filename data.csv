@@ -1,4 +1,0 @@
-link,Maven,Gradle,Travis CI,Github Actions,Maven Jacoco, Maven Cobertura,Maven Javadoc,Gradle Jacoco,Gradle Cobertura,Gradle Javadoc,Travis Codecov,Travis Jacoco, Travis Cobertura,Travis Javadoc,GA Codecov,GA Jacoco, GA Cobertura,GA Javadoc
-https://github.com/eugenp/tutorials,Yes,No,No,No,No,No,No,No,No,No,No,No,No,No,,,,
-https://github.com/Snailclimb/JavaGuide,No,No,No,No,No,No,No,No,No,No,No,No,No,No,,,,
-https://github.com/spring-projects/spring-boot,No,Yes,No,gradle-wrapper-validation.yml;,No,No,No,No,No,No,No,No,No,No,,,,

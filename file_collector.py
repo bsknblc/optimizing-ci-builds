@@ -54,7 +54,7 @@ while i < len(repositories):
         time.sleep(3)
 
 # Save data to a csv file
-with open("root_content.csv", "w", newline="", encoding="utf-8") as csv_file:
+with open("file_paths.csv", "w", newline="", encoding="utf-8") as csv_file:
     csv_writer = csv.writer(csv_file)
     csv_writer.writerow(["name", "link", "Default Branch", "SHA", "Stargazers Count", "Forks Count",
                          "Maven", "Gradle", "Travis CI", "Github Actions"])

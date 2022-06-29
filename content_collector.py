@@ -19,6 +19,7 @@ with open("root_content.csv", "r", newline="") as csv_file:
             {"name": row[0], "link": row[1], "default_branch": row[2], "sha": row[3],
              "stargazers_count": row[4], "forks_count": row[5],
              "Maven": row[6], "Gradle": row[7], "Travis CI": row[8], "Github Actions": row[9]})
+        break
 print("Data have been read.")
 
 filtered_repositories = []
@@ -142,7 +143,7 @@ for repository in repositories:
 
 
 # Save repositories to a csv file
-with open("data.csv", "w", newline="") as csv_file:
+with open("file_contents.csv", "w", newline="") as csv_file:
     csv_writer = csv.writer(csv_file)
     csv_writer.writerow(
         ["link", "Maven", "Gradle", "Travis CI", "Github Actions",
