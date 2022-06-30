@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7b6f1598-a953-45c9-b820-a5f077a6e2a0" name="Changes" comment="2 updated">
+    <list default="true" id="7b6f1598-a953-45c9-b820-a5f077a6e2a0" name="Changes" comment="files renamed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file_content_collector.py" beforeDir="false" afterPath="$PROJECT_DIR$/file_content_collector.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/repository_file_collector.py" beforeDir="false" afterPath="$PROJECT_DIR$/repository_file_collector.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content_collector.py" beforeDir="false" afterPath="$PROJECT_DIR$/content_collector.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/file_collector.py" beforeDir="false" afterPath="$PROJECT_DIR$/file_collector.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/file_contents.csv" beforeDir="false" afterPath="$PROJECT_DIR$/file_contents.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/repository_collector.py" beforeDir="false" afterPath="$PROJECT_DIR$/repository_collector.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,7 +135,7 @@
       <workItem from="1656057866251" duration="673000" />
       <workItem from="1656148566451" duration="15757000" />
       <workItem from="1656235092605" duration="18000000" />
-      <workItem from="1656497160727" duration="10274000" />
+      <workItem from="1656497160727" duration="22165000" />
     </task>
     <task id="LOCAL-00001" summary="a">
       <created>1656152394290</created>
@@ -192,7 +193,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656511218953</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="files renamed">
+      <created>1656511896571</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1656511896571</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -217,16 +225,12 @@
     <MESSAGE value="2,3 fixed" />
     <MESSAGE value="3 fixed" />
     <MESSAGE value="2 updated" />
-    <option name="LAST_COMMIT_MESSAGE" value="2 updated" />
+    <MESSAGE value="files renamed" />
+    <option name="LAST_COMMIT_MESSAGE" value="files renamed" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/file_content_collector.py</url>
-          <line>22</line>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/repository_collector.py</url>
           <line>44</line>
@@ -247,11 +251,31 @@
           <line>20</line>
           <option name="timeStamp" value="18" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/content_collector.py</url>
+          <line>150</line>
+          <option name="timeStamp" value="59" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/content_collector.py</url>
+          <line>53</line>
+          <option name="timeStamp" value="78" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/content_collector.py</url>
+          <line>54</line>
+          <option name="timeStamp" value="79" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="PythonConfigurationType">
+        <watch expression="file_paths[92]" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/optimizing_ci_builds$file_content_collector.coverage" NAME="file_content_collector Coverage Results" MODIFIED="1656511235594" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/optimizing_ci_builds$file_content_collector.coverage" NAME="content_collector Coverage Results" MODIFIED="1656528617706" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/optimizing_ci_builds$script.coverage" NAME="script Coverage Results" MODIFIED="1656167688058" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/optimizing_ci_builds$repository_file_collector.coverage" NAME="repository_file_collector Coverage Results" MODIFIED="1656508635241" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/optimizing_ci_builds$repository_root_collector.coverage" NAME="repository_root_collector Coverage Results" MODIFIED="1656166604884" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

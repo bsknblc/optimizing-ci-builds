@@ -11,7 +11,7 @@ headers = {
 
 # Read the repositories from the csv file.
 repositories = []
-with open("repositories.csv", "r", newline="") as csv_file:
+with open("repositories.csv", "r", newline="", encoding="utf-8") as csv_file:
     csv_reader = csv.reader(csv_file, delimiter=',')
     next(csv_reader, None)
     for row in csv_reader:
@@ -21,7 +21,7 @@ print("Repositories taken.")
 
 i = 0
 while i < len(repositories):
-    # Making all columns "No" as default
+    # Making all columns "" as default
     repository = repositories[i]
     repository["Maven"] = ""
     repository["Gradle"] = ""
