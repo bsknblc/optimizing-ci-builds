@@ -1,0 +1,26 @@
+Maven,Gradle,Travis CI,Github Actions
+492,448,200,224
+Maven
+Maven Jacoco, Maven Cobertura,Maven Javadoc,Jacoco&Cobertura,Cobertura&Javadoc,Jacoco&Javadoc,Jacoco&Cobertura&Javadoc,Jacoco or Cobertura or Javadoc
+103,31,194,6,24,79,6,128
+Gradle
+Gradle Jacoco,Gradle Cobertura,Gradle Javadoc,Jacoco&Cobertura,Cobertura&Javadoc,Jacoco&Javadoc,Jacoco&Cobertura&Javadoc,Jacoco or Cobertura or Javadoc
+47,4,159,2,4,33,2,49
+Travis CI
+Travis Codecov,Travis Jacoco,Travis Cobertura,Travis Javadoc,Tyml_codecov_jacoco,Tyml_codecov_cobertura,Tyml_codecov_javadoc,Tyml_jacoco_cobertura_javadoc Any
+27,16,10,17,10,5,5,40
+Github Actions
+GA Codecov,GA Jacoco, GA Cobertura,GA Javadoc,Gyml_codecov_jacoco,Gyml_codecov_cobertura,Gyml_codecov_javadoc,Gyml_jacoco_cobertura_javadoc Any
+8,21,1,29,3,1,3,43
+Maven Projects - Travis CI
+Travis Codecov,Travis Jacoco,Travis Cobertura,Travis Javadoc,Tyml_codecov_jacoco,Tyml_codecov_cobertura,Tyml_codecov_javadoc,Tyml_jacoco_cobertura_javadoc Any
+22,14,10,15,8,5,5,36
+Gradle Projects - Travis CI
+Travis Codecov,Travis Jacoco,Travis Cobertura,Travis Javadoc,Tyml_codecov_jacoco,Tyml_codecov_cobertura,Tyml_codecov_javadoc,Tyml_jacoco_cobertura_javadoc Any
+7,4,2,2,3,1,0,8
+Maven Projects - Github Actions
+GA Codecov,GA Jacoco, GA Cobertura,GA Javadoc,Gyml_codecov_jacoco,Gyml_codecov_cobertura,Gyml_codecov_javadoc,Gyml_jacoco_cobertura_javadoc Any
+6,15,1,22,2,1,3,32
+Gradle Projects - Github Actions
+GA Codecov,GA Jacoco, GA Cobertura,GA Javadoc,Gyml_codecov_jacoco,Gyml_codecov_cobertura,Gyml_codecov_javadoc,Gyml_jacoco_cobertura_javadoc Any
+2,7,0,7,1,0,0,12
