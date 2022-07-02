@@ -5,7 +5,7 @@ import os
 import time
 
 repositories = []
-with open("file_contents_r.csv", "r", newline="", encoding="utf8") as csv_file:
+with open("file_contents.csv", "r", newline="", encoding="utf8") as csv_file:
     csv_reader = csv.reader(csv_file, delimiter=',')
     next(csv_reader, None)
     for row in csv_reader:
