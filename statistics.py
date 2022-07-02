@@ -329,8 +329,8 @@ with open("statistics.csv", "w", newline="", encoding="utf-8") as csv_file:
 
     csv_writer.writerow(
         ["Travis Codecov", "Travis Jacoco", "Travis Cobertura", "Travis Javadoc",
-         "Tyml_codecov_jacoco", "Tyml_codecov_cobertura", "Tyml_codecov_javadoc",
-         "Tyml_jacoco_cobertura_javadoc Any"])
+         "codecov&jacoco keyword", "codecov&cobertura keyword", "codecov&javadoc keyword",
+         "jacoco or cobertura or javadoc"])
 
     csv_writer.writerow(
         [Tyml_codecov_count, Tyml_jacoco_count, Tyml_cobertura_count, Tyml_javadoc_count,
@@ -341,8 +341,8 @@ with open("statistics.csv", "w", newline="", encoding="utf-8") as csv_file:
 
     csv_writer.writerow(
         ["GA Codecov", "GA Jacoco", " GA Cobertura", "GA Javadoc",
-         "Gyml_codecov_jacoco", "Gyml_codecov_cobertura", "Gyml_codecov_javadoc",
-         "Gyml_jacoco_cobertura_javadoc Any"])
+         "codecov&jacoco keyword", "codecov&cobertura keyword", "codecov&javadoc keyword",
+         "jacoco or cobertura or javadoc"])
 
     csv_writer.writerow(
         [Gyml_codecov_count, Gyml_jacoco_count, Gyml_cobertura_count, Gyml_javadoc_count,
@@ -353,8 +353,8 @@ with open("statistics.csv", "w", newline="", encoding="utf-8") as csv_file:
 
     csv_writer.writerow(
         ["Travis Codecov", "Travis Jacoco", "Travis Cobertura", "Travis Javadoc",
-         "Tyml_codecov_jacoco", "Tyml_codecov_cobertura", "Tyml_codecov_javadoc",
-         "Tyml_jacoco_cobertura_javadoc Any"])
+         "codecov&jacoco keyword", "codecov&cobertura keyword", "codecov&javadoc keyword",
+         "jacoco or cobertura or javadoc"])
 
     csv_writer.writerow(
         [MTyml_codecov, MTyml_jacoco, MTyml_cobertura, MTyml_javadoc,
@@ -365,8 +365,8 @@ with open("statistics.csv", "w", newline="", encoding="utf-8") as csv_file:
 
     csv_writer.writerow(
         ["Travis Codecov", "Travis Jacoco", "Travis Cobertura", "Travis Javadoc",
-         "Tyml_codecov_jacoco", "Tyml_codecov_cobertura", "Tyml_codecov_javadoc",
-         "Tyml_jacoco_cobertura_javadoc Any"])
+         "codecov&jacoco keyword", "codecov&cobertura keyword", "codecov&javadoc keyword",
+         "jacoco or cobertura or javadoc"])
 
     csv_writer.writerow(
         [GTyml_codecov, GTyml_jacoco, GTyml_cobertura, GTyml_javadoc,
@@ -377,8 +377,8 @@ with open("statistics.csv", "w", newline="", encoding="utf-8") as csv_file:
 
     csv_writer.writerow(
         ["GA Codecov", "GA Jacoco", " GA Cobertura", "GA Javadoc",
-         "Gyml_codecov_jacoco", "Gyml_codecov_cobertura", "Gyml_codecov_javadoc",
-         "Gyml_jacoco_cobertura_javadoc Any"])
+         "codecov&jacoco keyword", "codecov&cobertura keyword", "codecov&javadoc keyword",
+         "jacoco or cobertura or javadoc"])
 
     csv_writer.writerow(
         [MGyml_codecov, MGyml_jacoco, MGyml_cobertura, MGyml_javadoc,
@@ -389,8 +389,8 @@ with open("statistics.csv", "w", newline="", encoding="utf-8") as csv_file:
 
     csv_writer.writerow(
         ["GA Codecov", "GA Jacoco", " GA Cobertura", "GA Javadoc",
-         "Gyml_codecov_jacoco", "Gyml_codecov_cobertura", "Gyml_codecov_javadoc",
-         "Gyml_jacoco_cobertura_javadoc Any"])
+         "codecov&jacoco keyword", "codecov&cobertura keyword", "codecov&javadoc keyword",
+         "jacoco or cobertura or javadoc"])
 
     csv_writer.writerow(
         [GGyml_codecov, GGyml_jacoco, GGyml_cobertura, GGyml_javadoc,
