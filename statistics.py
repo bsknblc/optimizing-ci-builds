@@ -10,14 +10,15 @@ with open("file_contents.csv", "r", newline="", encoding="utf8") as csv_file:
     next(csv_reader, None)
     for row in csv_reader:
         repositories.append(
-            {"link": row[0],
-             "Maven": row[1], "Gradle": row[2], "Travis CI": row[3], "Github Actions": row[4],
-             "MJacoco": row[5], "MCobertura": row[6], "MJavadoc": row[7],
-             "GJacoco": row[8], "GCobertura": row[9], "GJavadoc": row[10],
-             "Tyml_codecov": row[11], "Tyml_jacoco": row[12], "Tyml_cobertura": row[13],
-             "Tyml_javadoc": row[14], "Gyml_codecov": row[15], "Gyml_jacoco": row[16],
-             "Gyml_cobertura": row[17], "Gyml_javadoc": row[18]})
-print("Data have been read.")
+            {"name": row[0], "link": row[1], "default_branch": row[2], "sha": row[3],
+             "stargazers_count": row[4], "forks_count": row[5],
+             "Maven": row[6], "Gradle": row[7], "Travis CI": row[8], "Github Actions": row[9],
+             "MJacoco": row[10], "MCobertura": row[11], "MJavadoc": row[12],
+             "GJacoco": row[13], "GCobertura": row[14], "GJavadoc": row[15],
+             "Tyml_codecov": row[16], "Tyml_jacoco": row[17], "Tyml_cobertura": row[18],
+             "Tyml_javadoc": row[19], "Gyml_codecov": row[20], "Gyml_jacoco": row[21],
+             "Gyml_cobertura": row[22], "Gyml_javadoc": row[23]})
+print("Old data have been read.")
 
 maven_count = 0
 gradle_count = 0
