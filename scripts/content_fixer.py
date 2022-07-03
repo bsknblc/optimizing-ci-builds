@@ -10,55 +10,48 @@ headers = {
     'Authorization': 'token ' + github_auth_token
 }
 
-# Read the data from the csv file.
 repositories = []
-with open("file_paths.csv", "r", newline="", encoding="utf8") as csv_file:
+with open("../data/file_contents.csv", "r", newline="", encoding="utf8") as csv_file:
     csv_reader = csv.reader(csv_file, delimiter=',')
     next(csv_reader, None)
     for row in csv_reader:
         repositories.append(
             {"name": row[0], "link": row[1], "default_branch": row[2], "sha": row[3],
              "stargazers_count": row[4], "forks_count": row[5],
-             "Maven": row[6], "Gradle": row[7], "Travis CI": row[8], "Github Actions": row[9]})
-print("Data have been read.")
+             "Maven": row[6], "Gradle": row[7], "Travis CI": row[8], "Github Actions": row[9],
+             "MJacoco": row[10], "MCobertura": row[11], "MJavadoc": row[12],
+             "GJacoco": row[13], "GCobertura": row[14], "GJavadoc": row[15],
+             "Tyml_codecov": row[16], "Tyml_jacoco": row[17], "Tyml_cobertura": row[18],
+             "Tyml_javadoc": row[19], "Gyml_codecov": row[20], "Gyml_jacoco": row[21],
+             "Gyml_cobertura": row[22], "Gyml_javadoc": row[23]})
+print("Old data have been read.")
 
 
 i = 0
+
 for repository in repositories:
-    # Making all columns "No" as default
+    repository["name"] = repository["link"][19:]
 
-    # Maven Dependencies
-    repository["MJacoco"] = ""
-    repository["MCobertura"] = ""
-    repository["MJavadoc"] = ""
-
-    # Gradle Dependencies
-    repository["GJacoco"] = ""
-    repository["GCobertura"] = ""
-    repository["GJavadoc"] = ""
-
-    # Travis tools
-    repository["Tyml_codecov"] = ""
-    repository["Tyml_jacoco"] = ""
-    repository["Tyml_cobertura"] = ""
-    repository["Tyml_javadoc"] = ""
-
-    # Github Action Tools
-    repository["Gyml_codecov"] = ""
-    repository["Gyml_jacoco"] = ""
-    repository["Gyml_cobertura"] = ""
-    repository["Gyml_javadoc"] = ""
-
-    # checking if the repository has pom.xml in its files
     if not repository["Maven"] == "":
         file_paths = repository["Maven"].split(";")
         file_paths.remove("")
+
+        maven_jacoco_files = repository["MJacoco"].split(";")
+        maven_jacoco_files.remove("")
+
+        skipped_flag = 0
+        if len(maven_jacoco_files) > 0:
+            if "Skipped" in maven_jacoco_files:
+                repository["MJacoco"] = ""
+                repository["MCobertura"] = ""
+                repository["MJavadoc"] = ""
+                skipped_flag = 1
+
         j = 0
         while j < len(file_paths):
             file_path = file_paths[j]
             is_file = file_path.split("/")
-            skipped_flag = 1
-            if ".xml" not in is_file[len(is_file) - 1]:
+            if ".xml" not in is_file[len(is_file)-1]:
                 skipped_flag = 0
             if skipped_flag == 1:
                 try:
@@ -83,17 +76,28 @@ for repository in repositories:
                     repository["MJavadoc"] = repository["MJavadoc"] + "Skipped;"
                     time.sleep(3)
             else:
-                j = j + 1
+                j = len(file_paths)
 
     # checking if the repository has build-gradle in its files
     if not repository["Gradle"] == "":
         file_paths = repository["Gradle"].split(";")
         file_paths.remove("")
+
+        gradle_jacoco_files = repository["GJacoco"].split(";")
+        gradle_jacoco_files.remove("")
+
+        skipped_flag = 0
+        if len(gradle_jacoco_files) > 0:
+            if "Skipped" in gradle_jacoco_files:
+                repository["GJacoco"] = ""
+                repository["GCobertura"] = ""
+                repository["GJavadoc"] = ""
+                skipped_flag = 1
+
         j = 0
         while j < len(file_paths):
             file_path = file_paths[j]
             is_file = file_path.split("/")
-            skipped_flag = 1
             if ".gradle" not in is_file[len(is_file) - 1]:
                 skipped_flag = 0
             if skipped_flag == 1:
@@ -118,17 +122,29 @@ for repository in repositories:
                     repository["GJavadoc"] = repository["GJavadoc"] + "Skipped;"
                     time.sleep(3)
             else:
-                j = j = j + 1
+                j = len(file_paths)
 
     # checking if the repository has .travis.yml in its files
     if not repository["Travis CI"] == "":
         file_paths = repository["Travis CI"].split(";")
         file_paths.remove("")
+
+        travis_jacoco_keyword = repository["Tyml_codecov"].split(";")
+        travis_jacoco_keyword.remove("")
+
+        skipped_flag = 0
+        if len(travis_jacoco_keyword) > 0:
+            if "Skipped" in travis_jacoco_keyword:
+                repository["Tyml_codecov"] = ""
+                repository["Tyml_jacoco"] = ""
+                repository["Tyml_cobertura"] = ""
+                repository["Tyml_javadoc"] = ""
+                skipped_flag = 1
+
         j = 0
         while j < len(file_paths):
             file_path = file_paths[j]
             is_file = file_path.split("/")
-            skipped_flag = 1
             if ".travis" not in is_file[len(is_file) - 1]:
                 skipped_flag = 0
             if skipped_flag == 1:
@@ -156,17 +172,29 @@ for repository in repositories:
                     repository["Tyml_javadoc"] = repository["Tyml_javadoc"] + "Skipped;"
                     time.sleep(3)
             else:
-                j = j + 1
+                j = len(file_paths)
 
-        # checking if the repository has *.yml file in /.github/workflows
+    # checking if the repository has *.yml file in /.github/workflows
     if not repository["Github Actions"] == "":
         file_paths = repository["Github Actions"].split(";")
         file_paths.remove("")
+
+        ga_jacoco_keyword = repository["Gyml_codecov"].split(";")
+        ga_jacoco_keyword.remove("")
+
+        skipped_flag = 0
+        if len(ga_jacoco_keyword) > 0:
+            if "Skipped" in ga_jacoco_keyword:
+                repository["Gyml_codecov"] = ""
+                repository["Gyml_jacoco"] = ""
+                repository["Gyml_cobertura"] = ""
+                repository["Gyml_javadoc"] = ""
+                skipped_flag = 1
+
         j = 0
         while j < len(file_paths):
             file_path = file_paths[j]
             is_file = file_path.split("/")
-            skipped_flag = 1
             if ".yml" not in is_file[len(is_file) - 1] and ".yaml" not in is_file[len(is_file) - 1]:
                 skipped_flag = 0
             if skipped_flag == 1:
@@ -195,12 +223,13 @@ for repository in repositories:
                     repository["Gyml_javadoc"] = repository["Gyml_javadoc"] + "Skipped;"
                     time.sleep(3)
             else:
-                j = j + 1
+                j = len(file_paths)
+
     i = i + 1
     print(i)
 
 # Save repositories to a csv file
-with open("file_contents.csv", "w", newline="", encoding="utf-8") as csv_file:
+with open("../data/file_contents_r.csv", "w", newline="", encoding="utf-8") as csv_file:
     csv_writer = csv.writer(csv_file)
     csv_writer.writerow(
         ["name", "link", "Default Branch", "SHA", "Stargazers Count", "Forks Count",
@@ -222,3 +251,4 @@ with open("file_contents.csv", "w", newline="", encoding="utf-8") as csv_file:
                              repository["Tyml_javadoc"],
                              repository["Gyml_codecov"], repository["Gyml_jacoco"], repository["Gyml_cobertura"],
                              repository["Gyml_javadoc"]])
+

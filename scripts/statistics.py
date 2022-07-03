@@ -5,7 +5,7 @@ import os
 import time
 
 repositories = []
-with open("file_contents.csv", "r", newline="", encoding="utf8") as csv_file:
+with open("../data/file_contents.csv", "r", newline="", encoding="utf8") as csv_file:
     csv_reader = csv.reader(csv_file, delimiter=',')
     next(csv_reader, None)
     for row in csv_reader:
@@ -24,6 +24,8 @@ maven_count = 0
 gradle_count = 0
 travis_count = 0
 gaci_count = 0
+travis_or_gaci = 0
+
 MJacoco_count = 0
 MCobertura_count = 0
 MJavadoc_count = 0
@@ -132,6 +134,9 @@ for repository in repositories:
     if repository["Github Actions"]:
         github_actions = 1
         gaci_count += 1
+
+    if travis == 1 or github_actions == 1:
+        travis_or_gaci += 1
 
     if repository["MJacoco"]:
         MJacoco = 1
@@ -294,12 +299,12 @@ for repository in repositories:
             MGyml_jacoco_cobertura_javadoc += 1
 
 # Save statistics to a csv file
-with open("statistics.csv", "w", newline="", encoding="utf-8") as csv_file:
+with open("../data/statistics.csv", "w", newline="", encoding="utf-8") as csv_file:
     csv_writer = csv.writer(csv_file)
     csv_writer.writerow(
-        ["Maven", "Gradle", "Travis CI", "Github Actions"])
+        ["Maven", "Gradle", "Travis CI", "Github Actions", "Travis or GA"])
 
-    csv_writer.writerow([maven_count, gradle_count, travis_count, gaci_count])
+    csv_writer.writerow([maven_count, gradle_count, travis_count, gaci_count, travis_or_gaci])
 
     csv_writer.writerow(["Maven"])
 

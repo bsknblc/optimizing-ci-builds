@@ -1,5 +1,5 @@
-Maven,Gradle,Travis CI,Github Actions
-492,448,200,224
+Maven,Gradle,Travis CI,Github Actions,Travis or GA
+492,448,200,224,373
 Maven
 Maven Jacoco, Maven Cobertura,Maven Javadoc,Jacoco&Cobertura,Cobertura&Javadoc,Jacoco&Javadoc,Jacoco&Cobertura&Javadoc,Jacoco or Cobertura or Javadoc
 60,17,118,3,14,45,3,74

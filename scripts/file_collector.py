@@ -11,7 +11,7 @@ headers = {
 
 # Read the repositories from the csv file.
 repositories = []
-with open("repositories.csv", "r", newline="", encoding="utf-8") as csv_file:
+with open("../data/repositories.csv", "r", newline="", encoding="utf-8") as csv_file:
     csv_reader = csv.reader(csv_file, delimiter=',')
     next(csv_reader, None)
     for row in csv_reader:
@@ -54,7 +54,7 @@ while i < len(repositories):
         time.sleep(3)
 
 # Save data to a csv file
-with open("file_paths.csv", "w", newline="", encoding="utf-8") as csv_file:
+with open("data/file_paths.csv", "w", newline="", encoding="utf-8") as csv_file:
     csv_writer = csv.writer(csv_file)
     csv_writer.writerow(["name", "link", "Default Branch", "SHA", "Stargazers Count", "Forks Count",
                          "Maven", "Gradle", "Travis CI", "Github Actions"])

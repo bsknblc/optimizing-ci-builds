@@ -53,7 +53,7 @@ while i < len(repositories):
         time.sleep(5)
 
 # Save repositories to a csv file
-with open("repositories.csv", "w", newline="", encoding="utf-8") as csv_file:
+with open("data/repositories.csv", "w", newline="", encoding="utf-8") as csv_file:
     csv_writer = csv.writer(csv_file)
     csv_writer.writerow(["Name", "Link", "Default Branch", "SHA", "Stargazers Count", "Forks Count", "Date"])
     for repository in repositories:
