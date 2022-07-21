@@ -11,7 +11,7 @@ headers = {
 
 # Read the repositories from the csv file.
 repositories = []
-with open("../data/repositories.csv", "r", newline="", encoding="utf-8") as csv_file:
+with open("data/repositories.csv", "r", newline="", encoding="utf-8") as csv_file:
     csv_reader = csv.reader(csv_file, delimiter=',')
     next(csv_reader, None)
     for row in csv_reader:
