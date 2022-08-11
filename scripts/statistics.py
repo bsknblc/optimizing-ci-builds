@@ -5,7 +5,7 @@ import os
 import time
 
 repositories = []
-with open("../data/file_contents.csv", "r", newline="", encoding="utf8") as csv_file:
+with open("data/file_contents.csv", "r", newline="", encoding="utf8") as csv_file:
     csv_reader = csv.reader(csv_file, delimiter=',')
     next(csv_reader, None)
     for row in csv_reader:
@@ -299,7 +299,7 @@ for repository in repositories:
             MGyml_jacoco_cobertura_javadoc += 1
 
 # Save statistics to a csv file
-with open("../data/statistics.csv", "w", newline="", encoding="utf-8") as csv_file:
+with open("data/statistics.csv", "w", newline="", encoding="utf-8") as csv_file:
     csv_writer = csv.writer(csv_file)
     csv_writer.writerow(
         ["Maven", "Gradle", "Travis CI", "Github Actions", "Travis or GA"])

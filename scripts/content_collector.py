@@ -12,7 +12,7 @@ headers = {
 
 # Read the data from the csv file.
 repositories = []
-with open("../data/file_paths.csv", "r", newline="", encoding="utf8") as csv_file:
+with open("data/file_paths.csv", "r", newline="", encoding="utf8") as csv_file:
     csv_reader = csv.reader(csv_file, delimiter=',')
     next(csv_reader, None)
     for row in csv_reader:
@@ -39,12 +39,16 @@ for repository in repositories:
 
     # Travis tools
     repository["Tyml_codecov"] = ""
+    repository["Tyml_coveralls"] = ""
+    repository["Tyml_codacy"] = ""
     repository["Tyml_jacoco"] = ""
     repository["Tyml_cobertura"] = ""
     repository["Tyml_javadoc"] = ""
 
     # Github Action Tools
     repository["Gyml_codecov"] = ""
+    repository["Gyml_coveralls"] = ""
+    repository["Gyml_codacy"] = ""
     repository["Gyml_jacoco"] = ""
     repository["Gyml_cobertura"] = ""
     repository["Gyml_javadoc"] = ""
@@ -138,8 +142,12 @@ for repository in repositories:
                         headers=headers).json()
                     if "content" in response:
                         travis_content = base64.b64decode(response["content"]).decode("utf-8")
-                        if "https://codecov.io/bash" in travis_content:
+                        if "codecov" in travis_content:
                             repository["Tyml_codecov"] = repository["Tyml_codecov"] + file_path + ";"
+                        if "coveralls" in travis_content or "COVERALLS" in travis_content:
+                            repository["Tyml_coveralls"] = repository["Tyml_coveralls"] + file_path + ";"
+                        if "codacy" in travis_content or "CODACY" in travis_content:
+                            repository["Tyml_codacy"] = repository["Tyml_codacy"] + file_path + ";"
                         if "jacoco" in travis_content and "jacoco.skip=true" not in travis_content:
                             repository["Tyml_jacoco"] = repository["Tyml_jacoco"] + file_path + ";"
                         if "cobertura" in travis_content:
@@ -151,6 +159,8 @@ for repository in repositories:
                         j = j + 1
                 except:
                     repository["Tyml_codecov"] = repository["Tyml_codecov"] + "Skipped;"
+                    repository["Tyml_coveralls"] = repository["Tyml_coveralls"] + "Skipped;"
+                    repository["Tyml_codacy"] = repository["Tyml_codacy"] + "Skipped;"
                     repository["Tyml_jacoco"] = repository["Tyml_jacoco"] + "Skipped;"
                     repository["Tyml_cobertura"] = repository["Tyml_cobertura"] + "Skipped;"
                     repository["Tyml_javadoc"] = repository["Tyml_javadoc"] + "Skipped;"
@@ -176,9 +186,13 @@ for repository in repositories:
                         headers=headers).json()
                     if "content" in response:
                         yml_content = base64.b64decode(response["content"]).decode("utf-8")
-                        # checking if the *.yml contains "https://codecov.io/bash" keyword
-                        if "https://codecov.io/bash" in yml_content:
+                        # checking if the *.yml contains "codecov" keyword
+                        if "codecov" in yml_content:
                             repository["Gyml_codecov"] = repository["Gyml_codecov"] + file_path + ";"
+                        if "coveralls" in yml_content or "COVERALLS" in yml_content:
+                            repository["Gyml_coveralls"] = repository["Gyml_coveralls"] + file_path + ";"
+                        if "codacy" in yml_content or "CODACY" in yml_content:
+                            repository["Gyml_codacy"] = repository["Gyml_codacy"] + file_path + ";"
                         if "jacoco" in yml_content and "jacoco.skip=true" not in yml_content:
                             repository["Gyml_jacoco"] = repository["Gyml_jacoco"] + file_path + ";"
                         if "cobertura" in yml_content:
@@ -190,6 +204,8 @@ for repository in repositories:
                         j = j + 1
                 except:
                     repository["Gyml_codecov"] = repository["Gyml_codecov"] + "Skipped;"
+                    repository["Gyml_coveralls"] = repository["Gyml_coveralls"] + "Skipped;"
+                    repository["Gyml_codacy"] = repository["Gyml_codacy"] + "Skipped;"
                     repository["Gyml_jacoco"] = repository["Gyml_jacoco"] + "Skipped;"
                     repository["Gyml_cobertura"] = repository["Gyml_cobertura"] + "Skipped;"
                     repository["Gyml_javadoc"] = repository["Gyml_javadoc"] + "Skipped;"
@@ -200,15 +216,17 @@ for repository in repositories:
     print(i)
 
 # Save repositories to a csv file
-with open("../data/file_contents.csv", "w", newline="", encoding="utf-8") as csv_file:
+with open("data/file_contents.csv", "w", newline="", encoding="utf-8") as csv_file:
     csv_writer = csv.writer(csv_file)
     csv_writer.writerow(
         ["name", "link", "Default Branch", "SHA", "Stargazers Count", "Forks Count",
          "Maven", "Gradle", "Travis CI", "Github Actions",
          "Maven Jacoco", " Maven Cobertura", "Maven Javadoc",
          "Gradle Jacoco", "Gradle Cobertura", "Gradle Javadoc",
-         "Travis Codecov", "Travis Jacoco", " Travis Cobertura", "Travis Javadoc",
-         "GA Codecov", "GA Jacoco", " GA Cobertura", "GA Javadoc"
+         "Travis Codecov", "Travis Coveralls", "Travis Codacy",
+         "Travis Jacoco", " Travis Cobertura", "Travis Javadoc",
+         "GA Codecov", "GA Coveralls", "GA Codacy",
+         "GA Jacoco", " GA Cobertura", "GA Javadoc"
          ])
 
     for repository in repositories:
@@ -218,7 +236,7 @@ with open("../data/file_contents.csv", "w", newline="", encoding="utf-8") as csv
                              repository["Travis CI"], repository["Github Actions"],
                              repository["MJacoco"], repository["MCobertura"], repository["MJavadoc"],
                              repository["GJacoco"], repository["GCobertura"], repository["GJavadoc"],
-                             repository["Tyml_codecov"], repository["Tyml_jacoco"], repository["Tyml_cobertura"],
-                             repository["Tyml_javadoc"],
-                             repository["Gyml_codecov"], repository["Gyml_jacoco"], repository["Gyml_cobertura"],
-                             repository["Gyml_javadoc"]])
+                             repository["Tyml_codecov"], repository["Tyml_coveralls"], repository["Tyml_codacy"],
+                             repository["Tyml_jacoco"], repository["Tyml_cobertura"], repository["Tyml_javadoc"],
+                             repository["Gyml_codecov"], repository["Gyml_coveralls"], repository["Gyml_codacy"],
+                             repository["Gyml_jacoco"], repository["Gyml_cobertura"], repository["Gyml_javadoc"]])
