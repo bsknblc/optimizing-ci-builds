@@ -10,7 +10,15 @@ headers = {
 }
 
 repositories = []
-names = set()
+names = []
+
+with open("data/repositories_old.csv", "r", newline="", encoding="utf-8") as csv_file:
+    csv_reader = csv.reader(csv_file, delimiter=',')
+    next(csv_reader, None)
+    for row in csv_reader:
+        names.append(row[0])
+print("Repositories taken.")
+
 i = 0
 # There are 30 repos in every page, so with 34 iterations we get 1020 java repositories.
 while len(repositories) < 1000:
@@ -20,7 +28,7 @@ while len(repositories) < 1000:
         for repository in response["items"]:
             item = repository["full_name"]
             if item not in names:
-                names.add(item)
+                names.append(item)
                 dt_string = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
                 repositories.append({"name": repository["full_name"], "link": repository["html_url"],
                                      "default_branch": repository["default_branch"],
