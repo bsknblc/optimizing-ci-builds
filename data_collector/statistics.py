@@ -18,7 +18,7 @@ with open("data/file_contents.csv", "r", newline="", encoding="utf8") as csv_fil
              "Tyml_codecov": row[16], "Tyml_jacoco": row[17], "Tyml_cobertura": row[18],
              "Tyml_javadoc": row[19], "Gyml_codecov": row[20], "Gyml_jacoco": row[21],
              "Gyml_cobertura": row[22], "Gyml_javadoc": row[23]})
-print("Old data have been read.")
+print("Data have been read.")
 
 maven_count = 0
 gradle_count = 0
