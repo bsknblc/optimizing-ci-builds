@@ -7,9 +7,10 @@ import time
 
 github_auth_token = os.environ["G_AUTH_TOKEN"]
 headers = {
-    'Authorization': 'token ' + github_auth_token
+    'c': 'token ' + github_auth_token
 }
 
+os.chdir("..")
 # Read the data from the csv file.
 repositories = []
 with open("data/file_paths.csv", "r", newline="", encoding="utf8") as csv_file:
