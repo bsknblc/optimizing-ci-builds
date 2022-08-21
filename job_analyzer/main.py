@@ -15,6 +15,7 @@ def main():
         owner: str = repository["name"].split("/")[0]
         repo: str = repository["name"].split("/")[1]
         sha: str = repository["sha"]
+        default_branch: str = repository["default_branch"]
         os.system("mkdir " + repo + "_logs")
         try:
             response = utils.fork_project(owner=owner, repo=repo)
@@ -56,12 +57,14 @@ def main():
 
         # PHASE-3: EXECUTION
         """COMMITTING THE CHANGES IN THE YAML, TRIGGERING THE RUNNER AND INOTIFYWAIT"""
-        utils.execute(forked_owner, repo, sha, yml_files_path, configured_yaml_files, yaml_shas)
+        commit_sha = utils.execute(forked_owner, repo, sha, default_branch, yml_files_path, configured_yaml_files, yaml_shas)
 
         # # PHASE-4: ANALYSIS
         # """ANALYZING THE CSV PRODUCED BY INOTIFYWAIT"""
         # """PRINTING THE JOB (LINE NUMBER) FROM THE YAML FILE CAUSING UNNECESSARY USAGE"""
 
+        utils.check_runs(owner, repo, commit_sha)
+        utils.kill_processes()
 
 if __name__ == "__main__":
     main()

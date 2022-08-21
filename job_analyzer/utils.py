@@ -3,6 +3,7 @@ import json
 import os
 import requests
 import csv
+import time
 
 base_api_url: str = "https://api.github.com"
 # user_token: str = os.environ["G_AUTH_OP"]
@@ -11,15 +12,15 @@ headers: dict = {"Accept": "application/vnd.github+json",
 
 
 def fork_project(owner: str, repo: str):
-    url = f"{base_api_url}/repos/{owner}/{repo}"
-    response = requests.get(url=url, headers=headers)
-    if "id" not in response:
-        url_path: str = f"{base_api_url}/repos/{owner}/{repo}/forks"
-        response = requests.post(url_path, headers=headers)
-        if response.status_code != 202:
-            raise ValueError(
-                f"There have been a problem while forking {owner}/{repo}. Error: {response.text}")
-        return response.json()
+    url = f"{base_api_url}/repos/optimizing-ci-builds/{repo}"
+    requests.delete(url=url, headers=headers)
+    # if "id" not in response:
+    url_path: str = f"{base_api_url}/repos/{owner}/{repo}/forks"
+    response = requests.post(url_path, headers=headers)
+    if response.status_code != 202:
+        raise ValueError(
+            f"There have been a problem while forking {owner}/{repo}. Error: {response.text}")
+    return response.json()
 
 
 def get_yaml_file(forked_owner: str, repo: str, file_path: str):
@@ -62,66 +63,118 @@ def get_runner_token(owner: str, repo: str):
 
 
 def setup_runner(tar_filename, runner_version, token, owner, repo):
-    os.system(f"mkdir actions-runner")
+    url_path: str = f"{base_api_url}/repos/{owner}/{repo}/actions/runners"
+    response = requests.get(url_path, headers=headers)
 
-    runner_url = f"https://github.com/actions/runner/releases/download/v{runner_version}/actions-runner-{tar_filename}"
-    target_path = f"actions-runner/actions-runner-{tar_filename}"
-    try:
-        response = requests.get(runner_url, stream=True)
-        if response.status_code == 200:
-            with open(target_path, 'wb') as f:
-                f.write(response.raw.read())
-        else:
-            raise ValueError(
-                f"There was a problem while downloading the runner on {owner}/{repo}. Error: {response.text}")
-    except:
-        print("There was a problem while downloading the runner.")
-        # continue
-        pass
+    if response.json()["total_count"] == 0:
+        os.system(f"mkdir " + repo + "_runner")
+        runner_url = f"https://github.com/actions/runner/releases/download/v{runner_version}/actions-runner-{tar_filename}"
+        target_path = f"" + repo + "_runner/actions-runner-" + tar_filename
+        try:
+            response = requests.get(runner_url, stream=True)
+            if response.status_code == 200:
+                with open(target_path, 'wb') as f:
+                    f.write(response.raw.read())
+            else:
+                raise ValueError(
+                    f"There was a problem while downloading the runner on {owner}/{repo}. Error: {response.text}")
+        except:
+            print("There was a problem while downloading the runner.")
+            # continue
+            pass
 
-    os.system(f"tar xzf ./actions-runner/actions-runner-{tar_filename} -C actions-runner")
+        os.system(f"tar xzf ./" + repo + "_runner/actions-runner-" + tar_filename + " -C " + repo + "_runner")
 
-    os.system("mkdir actions-runner/_work")
-    os.chdir("actions-runner")
-    os.system(
-        f"echo | ./config.sh --url https://github.com/{owner}/{repo} --token {token}")
-
-
-def commit_file(owner: str, repo: str, file_paths, new_file_contents, yaml_shas):
-    url_path: str = f"{base_api_url}/repos/{owner}/{repo}/contents/{file_name}"
-    content = base64.b64encode(bytes(new_file_content, "utf-8"))
-    content = content.decode("utf-8")
-    data = {
-        "message": f"{file_name} updated.",
-        "content": content,
-        "sha": yaml_sha
-    }
-    response = requests.put(url=url_path, data=json.dumps(data), headers=headers)
-    if response.status_code != 201:
-        raise ValueError(
-            f"There was a problem while committing the yaml file on {owner}/{repo}. Error: {response.text}")
+        os.system("mkdir " + repo + "_runner/_work")
+        os.chdir("" + repo + "_runner")
+        os.system(
+            f"echo | ./config.sh --url https://github.com/{owner}/{repo} --token {token}")
 
 
-def commit_file(owner: str, repo: str, sha: str, file_paths, new_file_contents, yaml_shas):
+def commit_file(owner: str, repo: str, sha: str, default_branch: str, file_paths, new_file_contents, yaml_shas):
     create_branch(owner, repo, sha)
+    blob_shas = create_blobs(owner, repo, new_file_contents)
+    tree_sha = create_tree(owner, repo, sha, file_paths, blob_shas)
+    new_commit_sha = create_commit(owner, repo, sha, tree_sha)
+    commit_to_branch(owner, repo, new_commit_sha)
+    open_pull_request(owner, repo, default_branch)
+    return new_commit_sha
 
 
 def create_branch(owner, repo, sha):
     url = f"{base_api_url}/repos/{owner}/{repo}/git/refs"
     body = {
-        "ref": "refs/heads/test2",
+        "ref": "refs/heads/optimizing-ci-builds",
         "sha": sha
     }
     response = requests.post(url=url, data=json.dumps(body), headers=headers)
-    if response.status_code != 200:
-        raise ValueError(
-            f"There was a problem while creating branch {owner}/{repo}. Error: {response.text}")
 
 
-def execute(owner: str, repo: str, sha: str, file_paths, new_files, yaml_shas):
+def create_blobs(owner, repo, new_file_contents):
+    blob_shas = []
+    for content in new_file_contents:
+        url = f"{base_api_url}/repos/{owner}/{repo}/git/blobs"
+        body = {
+            "content": content,
+            "encoding": "utf-8"
+        }
+        response = requests.post(url=url, data=json.dumps(body), headers=headers)
+        blob_shas.append(response.json()['sha'])
+    return blob_shas
+
+
+def create_tree(owner, repo, sha, file_paths, blob_shas):
+    url = f"{base_api_url}/repos/{owner}/{repo}/git/trees"
+    body = {}
+    body["base_tree"] = sha
+    tree = []
+    for i in range(0, len(file_paths)):
+        tree.append({"path": file_paths[0], "mode": "100644", "type": "blob", "sha": blob_shas[i]})
+    body["tree"] = tree
+    response = requests.post(url=url, data=json.dumps(body), headers=headers)
+    tree_sha = response.json()['sha']
+    return tree_sha
+
+
+def create_commit(owner, repo, sha, tree_sha):
+    url = f"{base_api_url}/repos/{owner}/{repo}/git/commits"
+    body = {
+        "message": "Changed yaml files",
+        "author": {
+            "name": "optimizing-ci-builds",
+            "email": "ocibsummerresearch2022@gmail.com"
+        },
+        "parents": [sha],
+        "tree": tree_sha
+    }
+    response = requests.post(url=url, data=json.dumps(body), headers=headers)
+    new_commit_sha = response.json()['sha']
+    return new_commit_sha
+
+
+def commit_to_branch(owner, repo, new_commit_sha):
+    url = f"{base_api_url}/repos/{owner}/{repo}/git/refs/heads/optimizing-ci-builds"
+    body = {
+        "ref": "refs/heads/optimizing-ci-builds",
+        "sha": new_commit_sha
+    }
+    response = requests.post(url=url, data=json.dumps(body), headers=headers)
+
+
+def open_pull_request(owner: str, repo: str, default_branch: str):
+    url = f"{base_api_url}/repos/{owner}/{repo}/pulls"
+    body = {
+        "head": "optimizing-ci-builds",
+        "base": default_branch
+    }
+    response = requests.post(url=url, data=json.dumps(body), headers=headers)
+
+
+def execute(owner: str, repo: str, sha: str, default_branch: str, file_paths, new_files, yaml_shas):
     os.popen(f"inotifywait -mr _work/ --format %T,%w%f,%e --timefmt %T -o ../{repo}_logs/{owner}-{repo}.csv")
     os.popen("./run.sh")
-    commit_file(owner, repo, sha, file_paths, new_files, yaml_shas)
+    commit_sha = commit_file(owner, repo, sha, default_branch, file_paths, new_files, yaml_shas)
+    return commit_sha
 
 
 def get_filtered_repos():
@@ -141,3 +194,17 @@ def get_filtered_repos():
                  "Gyml_codecov": row[22], "Gyml_coveralls": row[23], "Gyml_codacy": row[24],
                  "Gyml_jacoco": row[25], "Gyml_cobertura": row[26], "Gyml_javadoc": row[27]})
     return repositories
+
+    def check_runs(owner: str, repo: str, commit_sha: str):
+        while (true):
+            time.sleep(60)
+            url = f"{base_api_url}/repos/{owner}/{repo}/commits/{commit_sha}/check-runs"
+            response = requests.get(url=url, data=json.dumps(body), headers=headers)
+            done = 1
+            for check_run in response["check_runs"]:
+                if check_run["status"] != "completed":
+                    done = 0
+            if done == 1:
+                break
+
+    def kill_processes():
